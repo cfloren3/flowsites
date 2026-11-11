@@ -12,6 +12,7 @@ import { BrowserFrame, PhoneFrame } from "@/components/Frames";
 import { Button, EvidenceBadge, Eyebrow, Reveal, SplitText, TextLink } from "@/components/ui";
 import { FinalCta } from "@/components/sections";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
+import { RollingNumber } from "@/components/Type";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -271,7 +272,9 @@ function Outcomes({ slug }: { slug: string }) {
           {p.metrics.map((m) => (
             <div key={m.label} className="flex flex-col bg-paper p-6">
               <dt className="order-2 mt-2 text-sm leading-snug text-stone">{m.label}</dt>
-              <dd className="order-1 text-[clamp(2.4rem,4vw,3.4rem)] font-semibold leading-none tracking-[-0.05em]">{m.value}</dd>
+              <dd className="order-1 text-[clamp(2.4rem,4vw,3.4rem)] font-semibold leading-none tracking-[-0.05em]">
+                <RollingNumber value={m.value} />
+              </dd>
               <dd className="order-3 mt-5 flex flex-wrap items-center gap-2 text-xs text-stone">
                 <EvidenceBadge evidence={m.evidence} />
                 <span>

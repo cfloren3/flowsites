@@ -9,7 +9,7 @@ export function RevealObserver() {
   const pathname = usePathname();
   useEffect(() => {
     if (!("IntersectionObserver" in window)) {
-      document.querySelectorAll("[data-reveal], .split").forEach((el) => el.classList.add("is-in"));
+      document.querySelectorAll("[data-reveal], .split, .roll").forEach((el) => el.classList.add("is-in"));
       return;
     }
     const io = new IntersectionObserver(
@@ -24,7 +24,7 @@ export function RevealObserver() {
       { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
     );
     const scan = () =>
-      document.querySelectorAll("[data-reveal]:not(.is-in), .split:not(.is-in)").forEach((el) => io.observe(el));
+      document.querySelectorAll("[data-reveal]:not(.is-in), .split:not(.is-in), .roll:not(.is-in)").forEach((el) => io.observe(el));
     scan();
     let t: number | undefined;
     const mo = new MutationObserver(() => {

@@ -11,7 +11,7 @@ import { faqs } from "@/content/faq";
 export const metadata: Metadata = {
   title: "Free Website Preview: See Your New Website Before You Pay",
   description:
-    "Get a free, custom homepage design for your Ontario trades business. If you don't love it, you don't pay. Websites from $750 CAD.",
+    "Get a free, custom homepage design for your Ontario trades business. If you don't love it, you don't pay. Websites starting at $750 CAD.",
   alternates: { canonical: "/free-website-preview" },
 };
 
@@ -19,7 +19,7 @@ export default function PreviewPage() {
   return (
     <>
       <section className="on-dark relative overflow-hidden bg-ink pt-32 pb-20 text-paper md:pt-40 md:pb-28 grain" aria-labelledby="preview-title">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-0 h-[44rem] w-[44rem] rounded-full bg-[radial-gradient(closest-side,rgba(201,242,107,.12),transparent)]" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-0 h-[44rem] w-[44rem] rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--p-accent)_12%,transparent),transparent)]" />
         <div className="container-x relative grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="label flex items-center gap-2 text-paper/55">

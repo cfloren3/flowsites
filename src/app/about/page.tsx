@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 const timeline = [
   { y: "Teens", t: "Started Yardex Guelph", b: "A lawn care company launched in his own neighbourhood. GuelphToday covered it in 2023.", src: "GuelphToday (2023), Jim Carroll (Apr 2023)" },
   { y: "Growth", t: "Taught himself SEO", b: "Built and optimised the Yardex website and Google Business Profile, growing to about 50 recurring properties.", src: "Founder-reported" },
-  { y: "2025–26", t: "Ontario DECA Provincial Executive Officer", b: "One of ten students leading Ontario DECA. Ran chapter engagement and built the first central Resource Hub.", src: "carterflorence.com" },
   { y: "2026", t: "Built TraitCRM", b: "Designed and built a CRM for trade crews with AI-assisted development. Yardex runs on it daily.", src: "traitcrm.com, carterflorence.com" },
   { y: "Now", t: "Flowsites", b: "Bringing the same design, SEO and systems thinking to other Ontario trades and service businesses.", src: "" },
 ];
@@ -54,7 +53,7 @@ export default function AboutPage() {
                 Running a crew taught me the rest: quoting fast, keeping routes full, collecting reviews, and spending far too many late nights on admin. That last part is why I built <Link href="/case-studies/traitcrm">TraitCRM</Link>, the software Yardex runs on today.
               </p>
               <p>
-                I&apos;ve also worked on organisational sites like <Link href="/case-studies/ontario-deca">Ontario DECA</Link>, and I study International Relations at Western University with Ivey AEO. Flowsites brings all of it together: modern design, real SEO and an owner&apos;s understanding of what happens after someone clicks &ldquo;Get a quote&rdquo;.
+                I also design personal-brand and product sites, and I study International Relations at Western University with Ivey AEO. Flowsites brings all of it together: modern design, real SEO and an owner&apos;s understanding of what happens after someone clicks &ldquo;Get a quote&rdquo;.
               </p>
               <p>
                 <strong>I won&apos;t promise you #1 on Google, and I won&apos;t invent numbers.</strong> I will show you your design before you pay, explain every decision in plain language, and tell you honestly what&apos;s working.
@@ -80,7 +79,7 @@ export default function AboutPage() {
         <div className="container-x">
           <Eyebrow dark>The path here</Eyebrow>
           <h2 id="tl-title" className="h-section mt-6">From one lawn to Flowsites.</h2>
-          <ol className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-paper/10 bg-paper/10 md:grid-cols-5">
+          <ol className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-paper/10 bg-paper/10 md:grid-cols-4">
             {timeline.map((t, i) => (
               <Reveal as="li" key={t.t} delay={i * 70} className="flex flex-col bg-ink p-6">
                 <span className="label text-volt">{t.y}</span>

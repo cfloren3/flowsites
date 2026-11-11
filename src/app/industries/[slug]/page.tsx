@@ -48,7 +48,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
             Get my free website preview
           </Button>
           <Button href="/pricing" variant="ghost" size="lg">
-            From $750 CAD
+            Starting at $750 CAD
           </Button>
         </Reveal>
       </PageHero>

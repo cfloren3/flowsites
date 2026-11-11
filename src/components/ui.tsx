@@ -35,7 +35,7 @@ export function SplitText({
             return (
               <span key={wi}>
                 <span className="w">
-                  <span style={{ "--i": idx } as CSSProperties} className={accent ? accentClassName : undefined}>
+                  <span style={{ "--i": idx } as CSSProperties} className={accent ? clsx("serif pr-[0.04em]", accentClassName) : undefined}>
                     {word}
                   </span>
                 </span>
@@ -93,7 +93,7 @@ export function Button({ href, children, variant = "primary", className, externa
     "group relative inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-[-0.01em] transition-[background,color,transform,box-shadow] duration-300 ease-[var(--ease-flow)] active:scale-[0.98] min-h-11",
     size === "lg" ? "px-7 py-4 text-[1.02rem]" : "px-5 py-3 text-[0.95rem]",
     variant === "primary" && "bg-ink text-paper hover:bg-ink-3",
-    variant === "accent" && "bg-volt text-ink hover:bg-[#d6f78a] shadow-[0_0_0_0_rgba(201,242,107,0)] hover:shadow-[0_10px_40px_-10px_rgba(201,242,107,.6)]",
+    variant === "accent" && "bg-volt text-ink hover:bg-volt-soft shadow-[0_0_0_0_color-mix(in_oklab,var(--p-accent)_0%,transparent)] hover:shadow-[0_10px_40px_-10px_color-mix(in_oklab,var(--p-accent)_60%,transparent)]",
     variant === "ghost" && "text-ink border border-ink/15 hover:border-ink/40 bg-transparent",
     variant === "light" && "bg-paper text-ink hover:bg-white",
     variant === "outline-light" && "text-paper border border-paper/20 hover:border-paper/50",

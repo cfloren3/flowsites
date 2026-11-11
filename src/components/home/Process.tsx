@@ -47,7 +47,12 @@ function StepCard({ s, i }: { s: (typeof processSteps)[number]; i: number }) {
       className={`flex h-full flex-col rounded-[24px] border p-7 md:p-9 ${featured ? "on-dark border-transparent bg-ink text-paper" : "border-ink/10 bg-paper"}`}
     >
       <div className="flex items-center justify-between">
-        <span className={`text-[4.5rem] font-semibold leading-none tracking-[-0.06em] ${featured ? "text-volt" : "text-ink/15"}`}>{s.n}</span>
+        <span
+          aria-hidden="true"
+          data-num={s.n}
+          className={`text-[4.5rem] font-semibold leading-none tracking-[-0.06em] before:content-[attr(data-num)] ${featured ? "text-volt" : "text-ink/15"}`}
+        />
+        <span className="sr-only">Step {s.n}</span>
         {featured ? <span className="label rounded-full bg-volt px-2.5 py-1 !text-[0.64rem] text-ink">The guarantee</span> : null}
       </div>
       <h3 className="h-card mt-auto pt-12 text-[1.9rem]">{s.t}</h3>

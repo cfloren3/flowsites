@@ -4,15 +4,15 @@ import clsx from "clsx";
 export function LogoMark({ className, inverted = false }: { className?: string; inverted?: boolean }) {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" className={clsx("shrink-0", className)}>
-      <rect width="32" height="32" rx="9" fill={inverted ? "#C9F26B" : "#0D0E0C"} />
+      <rect width="32" height="32" rx="9" fill={inverted ? "var(--p-accent)" : "var(--p-ink)"} />
       <path
         d="M7.5 22.5c3.2 0 4.6-2.2 6-5.1 1.5-3.1 3-5.9 7.2-5.9h3.8"
         fill="none"
-        stroke={inverted ? "#0D0E0C" : "#C9F26B"}
+        stroke={inverted ? "var(--p-ink)" : "var(--p-accent)"}
         strokeWidth="2.6"
         strokeLinecap="round"
       />
-      <path d="M21.3 8.2l3.6 3.3-3.6 3.3" fill="none" stroke={inverted ? "#0D0E0C" : "#C9F26B"} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M21.3 8.2l3.6 3.3-3.6 3.3" fill="none" stroke={inverted ? "var(--p-ink)" : "var(--p-accent)"} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

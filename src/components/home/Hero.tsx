@@ -7,6 +7,7 @@ import { AnimatePresence, motion, useMotionValue, useReducedMotion, useScroll, u
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import { projects } from "@/content/projects";
 import { Button, SplitText } from "../ui";
+import { Typewriter } from "../Type";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -54,12 +55,12 @@ export function Hero() {
     <section className="on-dark relative overflow-hidden bg-ink text-paper grain" aria-labelledby="hero-title">
       {/* soft light field */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 left-1/2 h-[46rem] w-[70rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(201,242,107,.10),transparent)]" />
+        <div className="absolute -top-40 left-1/2 h-[46rem] w-[70rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--p-accent)_10%,transparent),transparent)]" />
         <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-b from-transparent to-ink" />
         <svg className="absolute inset-0 h-full w-full opacity-[0.05]" aria-hidden="true">
           <defs>
             <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M80 0H0V80" fill="none" stroke="#F3F1EA" strokeWidth="1" />
+              <path d="M80 0H0V80" fill="none" stroke="var(--p-paper)" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -82,16 +83,23 @@ export function Hero() {
           as="h1"
           id="hero-title"
           immediate
-          text={"Built to stand out.\n*Engineered* *to* *get* *found.*"}
-          accentClassName="text-paper/45"
+          text={"Built to stand out.\nEngineered to get *found.*"}
+          accentClassName="text-volt"
           className="display mt-6 text-[clamp(3.1rem,8.6vw,8.8rem)]"
           delay={120}
         />
+        <div className="rise-in mt-6" style={{ "--d": "700ms" } as React.CSSProperties}>
+          <Typewriter
+            prefix="Websites for"
+            words={["landscapers", "roofers", "plumbers", "electricians", "HVAC companies", "contractors", "cleaning companies"]}
+            className="text-[clamp(0.95rem,1.6vw,1.2rem)] text-paper/80"
+          />
+        </div>
 
         <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-12 md:items-end">
           <p className="rise-in lede max-w-xl text-paper/70 md:col-span-6" style={{ "--d": "450ms" } as React.CSSProperties}>
             Beautifully designed websites, local SEO and ongoing growth for Ontario contractors and service businesses.{" "}
-            <span className="text-paper">Custom websites from $750&nbsp;CAD.</span>
+            <span className="text-paper">Websites starting at $750&nbsp;CAD.</span>
           </p>
           <div className="rise-in md:col-span-6 md:justify-self-end" style={{ "--d": "600ms" } as React.CSSProperties}>
             <div className="flex flex-wrap gap-3">
@@ -216,6 +224,11 @@ export function Hero() {
               >
                 <p className="label text-paper/55">{p.category}</p>
                 <p className="mt-2 text-xl font-semibold tracking-[-0.03em]">{p.name}</p>
+                {p.metrics[0]?.value.startsWith("#") ? (
+                  <p className="mt-2 text-sm text-paper/75">
+                    <span className="serif text-2xl text-volt">{p.metrics[0].value}</span> on Google for “lawn care Guelph”
+                  </p>
+                ) : null}
                 <Link href={`/case-studies/${p.slug}`} className="mt-3 inline-flex items-center gap-1.5 text-sm text-volt hover:underline underline-offset-4">
                   Read the case study <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </Link>

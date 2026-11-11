@@ -38,7 +38,7 @@ export function RankingDashboard() {
   const start = kw.history[0];
   return (
     <div className="overflow-hidden rounded-[24px] border border-paper/10 bg-ink-2">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-paper/10 bg-[#c9f26b]/[0.08] px-5 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-paper/10 bg-[var(--p-accent)]/[0.08] px-5 py-3">
         <p className="flex items-center gap-2 text-sm text-paper/80">
           <Info className="h-4 w-4 text-volt" aria-hidden="true" />
           <span>
@@ -149,8 +149,8 @@ function Spark({ data }: { data: number[] }) {
   const pts = data.map((v, i) => [(i / (data.length - 1)) * w, 3 + ((v - min) / (max - min || 1)) * (h - 6)]);
   return (
     <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} aria-hidden="true">
-      <polyline points={pts.map((p) => p.join(",")).join(" ")} fill="none" stroke="#C9F26B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx={pts[pts.length - 1][0]} cy={pts[pts.length - 1][1]} r="2.5" fill="#C9F26B" />
+      <polyline points={pts.map((p) => p.join(",")).join(" ")} fill="none" stroke="var(--p-accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx={pts[pts.length - 1][0]} cy={pts[pts.length - 1][1]} r="2.5" fill="var(--p-accent)" />
     </svg>
   );
 }
@@ -176,29 +176,29 @@ function PositionChart({ data, labels }: { data: number[]; labels: string[] }) {
         <title id={`${id}-t`}>{`Average position by month: ${data.map((v, i) => `${labels[i]} ${v}`).join(", ")}`}</title>
         {ticks.map((t) => (
           <g key={t}>
-            <line x1={pl} x2={W - pr} y1={y(t)} y2={y(t)} stroke="rgba(243,241,234,.08)" />
-            <text x={pl - 8} y={y(t) + 4} textAnchor="end" fontSize="10" fill="rgba(243,241,234,.45)" fontFamily="var(--font-mono)">
+            <line x1={pl} x2={W - pr} y1={y(t)} y2={y(t)} stroke="color-mix(in_oklab,var(--p-paper)_8%,transparent)" />
+            <text x={pl - 8} y={y(t) + 4} textAnchor="end" fontSize="10" fill="color-mix(in_oklab,var(--p-paper)_45%,transparent)" fontFamily="var(--font-mono)">
               {t}
             </text>
           </g>
         ))}
         {labels.map((l, i) => (
-          <text key={l} x={x(i)} y={H - 6} textAnchor="middle" fontSize="10" fill="rgba(243,241,234,.45)" fontFamily="var(--font-mono)">
+          <text key={l} x={x(i)} y={H - 6} textAnchor="middle" fontSize="10" fill="color-mix(in_oklab,var(--p-paper)_45%,transparent)" fontFamily="var(--font-mono)">
             {l}
           </text>
         ))}
         <path d={`${path} L${x(data.length - 1)},${H - pb} L${x(0)},${H - pb} Z`} fill="url(#fade)" opacity="0.5" />
         <defs>
           <linearGradient id="fade" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#C9F26B" stopOpacity="0.25" />
-            <stop offset="1" stopColor="#C9F26B" stopOpacity="0" />
+            <stop offset="0" stopColor="var(--p-accent)" stopOpacity="0.25" />
+            <stop offset="1" stopColor="var(--p-accent)" stopOpacity="0" />
           </linearGradient>
         </defs>
-        <path d={path} fill="none" stroke="#C9F26B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        {hover !== null ? <line x1={x(hover)} x2={x(hover)} y1={pt} y2={H - pb} stroke="rgba(243,241,234,.3)" /> : null}
+        <path d={path} fill="none" stroke="var(--p-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        {hover !== null ? <line x1={x(hover)} x2={x(hover)} y1={pt} y2={H - pb} stroke="color-mix(in_oklab,var(--p-paper)_30%,transparent)" /> : null}
         {data.map((v, i) => (
           <g key={i}>
-            <circle cx={x(i)} cy={y(v)} r={hover === i || i === data.length - 1 ? 5 : 3.5} fill="#C9F26B" stroke="#17191A" strokeWidth="2" />
+            <circle cx={x(i)} cy={y(v)} r={hover === i || i === data.length - 1 ? 5 : 3.5} fill="var(--p-accent)" stroke="var(--p-ink-2)" strokeWidth="2" />
             <rect
               x={x(i) - 24}
               y={pt}

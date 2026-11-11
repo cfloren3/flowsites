@@ -8,7 +8,7 @@ import { FinalCta, Guarantee } from "@/components/sections";
 export const metadata: Metadata = {
   title: "Services: Web Design, Local SEO & Website Care",
   description:
-    "Website design from $750 CAD, local SEO and ongoing website growth for Ontario contractors and service businesses. Three services that work together.",
+    "Website design starting at $750 CAD, local SEO and ongoing website growth for Ontario contractors and service businesses. Three services that work together.",
   alternates: { canonical: "/services" },
 };
 
@@ -28,7 +28,11 @@ export default function ServicesPage() {
                 href={`/services/${s.slug}`}
                 className={`group grid gap-8 rounded-[28px] border p-8 transition-colors md:grid-cols-12 md:p-12 ${i === 0 ? "on-dark border-transparent bg-ink text-paper" : "border-ink/10 bg-paper-2 hover:bg-paper-3/60"}`}
               >
-                <span className={`text-[5rem] font-semibold leading-none tracking-[-0.06em] md:col-span-2 ${i === 0 ? "text-volt" : "text-ink/15"}`}>{s.number}</span>
+                <span
+                  aria-hidden="true"
+                  data-num={s.number}
+                  className={`text-[5rem] font-semibold leading-none tracking-[-0.06em] before:content-[attr(data-num)] md:col-span-2 ${i === 0 ? "text-volt" : "text-ink/15"}`}
+                />
                 <div className="md:col-span-6">
                   <h2 className="text-[clamp(1.9rem,3.4vw,3rem)] font-semibold leading-[1] tracking-[-0.045em]">{s.name}</h2>
                   <p className={`mt-4 max-w-lg leading-relaxed ${i === 0 ? "text-paper/65" : "text-stone"}`}>{s.intro}</p>

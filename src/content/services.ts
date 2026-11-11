@@ -20,7 +20,7 @@ export const services: Service[] = [
     number: "01",
     name: "Website Design & Development",
     short: "Custom, mobile-first websites built to turn visitors into quote requests.",
-    price: "From $750 CAD",
+    price: "Starting at $750 CAD",
     priceNote: "Final price depends on pages, features and content, confirmed in a written quote before work begins.",
     intro:
       "Every site is designed for one business. We start from your services, service area, customers and competitors, then design a site that looks established and makes contacting you effortless.",
@@ -39,9 +39,9 @@ export const services: Service[] = [
       "Launch on your domain",
     ],
     notIncluded: ["Domain registration", "Hosting fees", "Business email accounts", "Paid stock photography, fonts or plugins", "Copywriting beyond the agreed pages (quoted separately)"],
-    seoTitle: "Website Design for Contractors & Trades in Ontario | From $750",
+    seoTitle: "Website Design for Contractors & Trades in Ontario | Starting at $750",
     seoDescription:
-      "Custom, mobile-first websites for Ontario contractors and service businesses. Built for speed, local search and quote requests. From $750 CAD, and you see the design before you pay.",
+      "Custom, mobile-first websites for Ontario contractors and service businesses. Built for speed, local search and quote requests. Starting at $750 CAD, and you see the design before you pay.",
   },
   {
     slug: "local-seo",

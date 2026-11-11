@@ -229,7 +229,7 @@ export function InquiryForm({
                 disabled={status === "submitting"}
                 className={clsx(
                   "group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-4 font-medium transition-colors disabled:opacity-70",
-                  dark ? "bg-volt text-ink hover:bg-[#d6f78a]" : "bg-ink text-paper hover:bg-ink-3",
+                  dark ? "bg-volt text-ink hover:bg-volt-soft" : "bg-ink text-paper hover:bg-ink-3",
                 )}
               >
                 {status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : null}

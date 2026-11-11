@@ -33,7 +33,17 @@ const pending = (keyword: string): RankingRecord => ({
 });
 
 export const yardexRankings: RankingRecord[] = [
-  pending("lawn care Guelph"),
+  {
+    keyword: "lawn care Guelph",
+    engine: "Google",
+    location: "Guelph, ON",
+    device: "—",
+    type: "Organic",
+    position: 2,
+    checked: null,
+    method: "Owner-reported (carterflorence.com). Dated Search Console export pending.",
+    status: "client-reported",
+  },
   pending("lawn mowing Guelph"),
   pending("lawn maintenance Guelph"),
   pending("lawn care services Guelph"),

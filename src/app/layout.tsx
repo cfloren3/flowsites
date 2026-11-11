@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource/instrument-serif/400-italic.css";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -13,7 +15,7 @@ import { services } from "@/content/services";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Flowsites | Website Design & Local SEO for Ontario Trades. From $750",
+    default: "Flowsites | Website Design & Local SEO for Ontario Trades. Starting at $750",
     template: "%s | Flowsites",
   },
   description: site.description,
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F3F1EA",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
@@ -51,7 +53,7 @@ const orgSchema = {
       description: site.description,
       logo: `${site.url}/icon.svg`,
       image: `${site.url}/opengraph-image`,
-      priceRange: "From $750 CAD",
+      priceRange: "Starting at $750 CAD",
       currenciesAccepted: "CAD",
       // Service-area business: no street address is published.
       areaServed: { "@type": "AdministrativeArea", name: "Ontario, Canada" },
@@ -77,7 +79,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en-CA" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('js');try{var p=localStorage.getItem('fs-palette');if(p&&p!=='navy')document.documentElement.dataset.palette=p}catch(e){}",
+          }}
+        />
       </head>
       <body className="antialiased">
         <a

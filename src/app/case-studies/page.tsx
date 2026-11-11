@@ -9,7 +9,7 @@ import { FinalCta } from "@/components/sections";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "In-depth case studies from Flowsites: how we approached design, SEO, information architecture and product design for Yardex Guelph, Carter Florence, Ontario DECA and TraitCRM.",
+    "In-depth case studies from Flowsites: how we approached design, local SEO and product design for Yardex Guelph, Carter Florence and TraitCRM.",
   alternates: { canonical: "/case-studies" },
 };
 

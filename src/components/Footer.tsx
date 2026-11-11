@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { PaletteSwitcher } from "./PaletteSwitcher";
 import { site } from "@/content/site";
 import { services } from "@/content/services";
 import { industries } from "@/content/industries";
@@ -16,7 +17,7 @@ export function Footer() {
             <p className="mt-6 max-w-sm text-paper/60 leading-relaxed">
               Premium websites, local SEO and ongoing growth for Ontario&apos;s trades and service businesses. Based in Guelph, working across Ontario.
             </p>
-            <p className="label mt-6 text-paper/55">Websites from $750 CAD · See it before you pay</p>
+            <p className="label mt-6 text-paper/55">Websites starting at $750 CAD · See it before you pay</p>
             <a href={`mailto:${site.email}`} className="mt-6 inline-block text-lg underline decoration-paper/30 underline-offset-4 hover:decoration-volt">
               {site.email}
             </a>
@@ -40,14 +41,17 @@ export function Footer() {
         </div>
         <div aria-hidden="true" className="mt-20 select-none overflow-hidden">
           <svg viewBox="0 0 1000 190" className="w-full" focusable="false">
-            <text x="0" y="160" fill="rgba(243,241,234,0.06)" fontFamily="var(--font-geist-sans)" fontWeight="600" fontSize="226" letterSpacing="-15">
+            <text x="0" y="160" fill="color-mix(in_oklab,var(--p-paper)_6%,transparent)" fontFamily="var(--font-geist-sans)" fontWeight="600" fontSize="226" letterSpacing="-15">
               flowsites
             </text>
           </svg>
         </div>
         <div className="mt-6 flex flex-col gap-3 border-t border-paper/10 pt-6 text-sm text-paper/55 md:flex-row md:justify-between">
           <p>© {year} {site.legalName}. All prices in Canadian dollars (CAD), plus applicable HST.</p>
-          <p>No ranking guarantees, just honest work and honest reporting.</p>
+          <div className="flex items-center gap-3">
+            <span>Palette</span>
+            <PaletteSwitcher dark />
+          </div>
         </div>
       </div>
     </footer>

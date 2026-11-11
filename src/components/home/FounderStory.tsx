@@ -1,4 +1,5 @@
 import { PhoneFrame } from "../Frames";
+import { RollingNumber } from "../Type";
 import { getProject } from "@/content/projects";
 import { EvidenceBadge, Eyebrow, Reveal, SplitText, TextLink } from "../ui";
 
@@ -21,7 +22,7 @@ export function FounderStory() {
             </Reveal>
             <SplitText
               id="founder-title"
-              text={"We didn't just build websites for trades.\n*We* *built* *a* *trades* *business.*"}
+              text={"We didn't just build websites for trades.\nWe built a *trades* *business.*"}
               accentClassName="text-volt"
               className="h-section mt-6"
             />
@@ -50,7 +51,9 @@ export function FounderStory() {
           {y.metrics.map((m, i) => (
             <Reveal key={m.label} delay={i * 80} className="flex flex-col bg-ink p-6 md:p-8">
               <dt className="order-2 mt-3 text-sm leading-snug text-paper/60">{m.label}</dt>
-              <dd className="order-1 text-[clamp(2.6rem,4.5vw,4rem)] font-semibold leading-none tracking-[-0.05em]">{m.value}</dd>
+              <dd className="order-1 text-[clamp(2.6rem,4.5vw,4rem)] font-semibold leading-none tracking-[-0.05em]">
+                <RollingNumber value={m.value} delay={i * 120} />
+              </dd>
               <dd className="order-3 mt-5">
                 <EvidenceBadge evidence={m.evidence} />
                 {m.evidence.sourceUrl ? (

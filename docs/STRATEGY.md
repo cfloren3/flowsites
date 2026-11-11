@@ -31,8 +31,8 @@ _Prepared 11 November 2026. Every claim about third parties below was observed d
 Market price signals (third-party, self-published — benchmarks only): a $995 "Website Digital Foundation" package (actuallywecreate.com), WordPress builds "from $500" (ambrite.ca), Hamilton packages "from $1,500" (lifewebanddesign.com), typical Canadian small-business sites $3,000–$8,000 (impeka.com), and one Mississauga firm stating Ontario local-SEO retainers of $800–$2,500/month (self-reported).
 
 ### Where Flowsites can win (verifiable strengths only)
-1. **Range of evidence.** FoundFirst.ca shows trade marketing sites. Flowsites can show a trade site *and* a software product (TraitCRM, which Yardex runs on), a personal-brand experience, and organisational work.
-2. **Operating depth.** Yardex is a working recurring-revenue business: 50 recurring properties and $36k recurring revenue, both founder-reported. Its tooling was built in-house. "We built a trades business, then the software to run it" is a claim FoundFirst can't make.
+1. **Range of evidence.** FoundFirst.ca shows trade marketing sites. Flowsites can show a trade site *and* a software product (TraitCRM, which Yardex runs on) and a personal-brand experience.
+2. **Operating depth.** Yardex is a working recurring business with about 50 weekly properties (owner-reported) and an owner-reported #2 Google ranking for "lawn care Guelph". Its tooling was built in-house. "We built a trades business, then the software to run it" is a claim FoundFirst can't make.
 3. **Entry price.** $750 vs a published $1,000, with the same preview-first promise.
 4. **Evidence discipline.** Every metric on our site carries a Verified / Client-reported / Historical / Not-yet-verified label, with method and date. No competitor reviewed does this. It turns honesty into a differentiator.
 5. **Visual sophistication.** Motion, editorial typography and layered real-work previews raise perceived value above the $750 price point.
@@ -52,7 +52,9 @@ Market price signals (third-party, self-published — benchmarks only): a $995 "
 
 **Name/wordmark:** lowercase `flowsites` in Geist Sans Semibold with tight tracking. The mark is a rounded square holding one continuous stroke that rises from lower-left into an up-right arrow. It reads as flow (one line), progress (rising) and momentum (arrow), and it stays legible at 16px for the favicon.
 
-**Palette (restrained):**
+**Palette (restrained). Updated: navy, white & coral is the default; cream, black & burnt orange is the switchable alternate (see `src/app/globals.css`).**
+
+_Original exploration below, superseded:_
 | Token | Hex | Use |
 |---|---|---|
 | Ink | `#0D0E0C` | Primary text, dark sections |

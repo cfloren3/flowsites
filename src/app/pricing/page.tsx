@@ -5,9 +5,9 @@ import { faqs } from "@/content/faq";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Pricing: Websites from $750 CAD",
+  title: "Pricing: Websites starting at $750 CAD",
   description:
-    "Transparent website pricing for Ontario trades: custom websites from $750 CAD with a free design preview. SEO and website care on custom plans. Third-party costs explained.",
+    "Transparent website pricing for Ontario trades: custom websites starting at $750 CAD with a free design preview. SEO and website care on custom plans. Third-party costs explained.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -19,7 +19,7 @@ export default function PricingPage() {
       <JsonLd data={faqSchema(pricingFaqs)} />
       <PageHero
         eyebrow="Pricing · CAD"
-        title={"Websites from $750.\n*No-risk* *design* *preview.*"}
+        title={"Websites starting at $750.\n*No-risk* *design* *preview.*"}
         lede="Simple starting prices, clear separation between one-time and ongoing costs, and nothing to pay until you've seen and approved your design."
         className="!pb-0"
       />

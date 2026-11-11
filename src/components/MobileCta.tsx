@@ -47,7 +47,7 @@ export function MobileCta() {
       >
         <span className="text-sm">
           <span className="font-medium">Free website preview</span>
-          <span className="text-paper/55"> · from $750</span>
+          <span className="text-paper/55"> · starting at $750</span>
         </span>
         <span className="grid h-10 w-10 place-items-center rounded-full bg-volt text-ink">
           <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

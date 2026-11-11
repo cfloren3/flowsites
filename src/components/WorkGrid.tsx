@@ -12,7 +12,6 @@ const filters = [
   { k: "all", label: "All work" },
   { k: "trades", label: "Trades & local", match: ["yardex-guelph"] },
   { k: "brand", label: "Brand & editorial", match: ["carter-florence"] },
-  { k: "org", label: "Organisations", match: ["ontario-deca"] },
   { k: "product", label: "Software & product", match: ["traitcrm"] },
 ];
 

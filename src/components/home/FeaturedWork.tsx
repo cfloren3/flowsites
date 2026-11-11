@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import clsx from "clsx";
 import { projects, type Project } from "@/content/projects";
 import { BrowserFrame, PhoneFrame } from "../Frames";
+import { RollingNumber } from "../Type";
 import { EvidenceBadge, Eyebrow, SplitText, Reveal, TextLink } from "../ui";
 
 export function FeaturedWork() {
@@ -16,7 +17,7 @@ export function FeaturedWork() {
         <div className="grid gap-8 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
             <Reveal>
-              <Eyebrow>Selected work · 04 projects</Eyebrow>
+              <Eyebrow>Selected work · {String(projects.length).padStart(2, "0")} projects</Eyebrow>
             </Reveal>
             <SplitText id="work-title" text={"Our strongest evidence\nis *our* *work.*"} className="h-section mt-5" />
           </div>
@@ -90,7 +91,9 @@ function ProjectPanel({ project: p, index }: { project: Project; index: number }
               {p.metrics.slice(0, 2).map((m) => (
                 <div key={m.label} className={clsx("p-4", tone === "dark" ? "bg-ink" : "bg-paper-2")}>
                   <dt className="sr-only">{m.label}</dt>
-                  <dd className="text-3xl font-semibold tracking-[-0.04em]">{m.value}</dd>
+                  <dd className="text-3xl font-semibold tracking-[-0.04em]">
+                    <RollingNumber value={m.value} />
+                  </dd>
                   <dd className={clsx("mt-1 text-xs leading-snug", tone === "dark" ? "text-paper/55" : "text-stone")}>{m.label}</dd>
                   <dd className="mt-3">
                     <EvidenceBadge evidence={m.evidence} />
@@ -99,7 +102,7 @@ function ProjectPanel({ project: p, index }: { project: Project; index: number }
               ))}
             </dl>
           ) : (
-            <p className={clsx("mt-8 border-l-2 pl-4 text-sm leading-relaxed", tone === "dark" ? "border-volt text-paper/60" : "border-ink text-ink/60")}>
+            <p className={clsx("mt-8 border-l-2 pl-4 text-sm leading-relaxed", tone === "dark" ? "border-volt text-paper/70" : "border-ink text-ink/75")}>
               {p.relationship}
             </p>
           )}

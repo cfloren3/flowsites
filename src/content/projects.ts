@@ -82,24 +82,30 @@ export const projects: Project[] = [
     capturedOn: CAPTURED,
     metrics: [
       {
-        value: "50",
-        label: "Recurring properties serviced weekly",
-        evidence: { status: "client-reported", source: "yardexguelph.ca and carterflorence.com (owner-published)", checked: CAPTURED },
-      },
-      {
-        value: "$50k+",
-        label: "Annual revenue, of which ~$36k is recurring",
-        evidence: { status: "client-reported", source: "carterflorence.com (owner-published)", checked: CAPTURED, note: "Not audited. We don't attribute this revenue to SEO alone." },
+        value: "#2",
+        label: "On Google for “lawn care Guelph”",
+        evidence: {
+          status: "client-reported",
+          source: "Owner-reported on carterflorence.com",
+          sourceUrl: "https://carterflorence.com/",
+          checked: CAPTURED,
+          note: "Dated Search Console export pending. Rankings vary by location, device and day.",
+        },
       },
       {
         value: "Top 3",
-        label: "Lawn care services in Guelph: ThreeBest Rated listing (4.9 score)",
+        label: "Lawn care services in Guelph: ThreeBest Rated (4.9 score)",
         evidence: { status: "verified", source: "ThreeBest Rated", sourceUrl: "https://threebestrated.ca/lawn-care-services-in-guelph-on", checked: CAPTURED },
       },
       {
-        value: "30",
-        label: "Indexable URLs in the XML sitemap: 9 service pages and 11 local guides",
-        evidence: { status: "verified", source: "yardexguelph.ca/sitemap.xml (direct inspection)", sourceUrl: "https://www.yardexguelph.ca/sitemap.xml", checked: CAPTURED },
+        value: "75+",
+        label: "Five-star Google reviews",
+        evidence: { status: "client-reported", source: "Published on yardexguelph.ca", sourceUrl: "https://www.yardexguelph.ca/", checked: CAPTURED },
+      },
+      {
+        value: "50",
+        label: "Recurring properties serviced every week",
+        evidence: { status: "client-reported", source: "Published on yardexguelph.ca", checked: CAPTURED },
       },
     ],
     sections: [
@@ -168,7 +174,7 @@ export const projects: Project[] = [
         kicker: "06 · Outcomes",
         title: "What we can show, and how we know it.",
         body: [
-          "Each figure below carries its evidence status. Business growth came from several things working together: service quality, reviews, referrals, retention and search visibility. We don't credit it to the website alone.",
+          "Today Yardex shows up near the top of Google for the search that matters most to a Guelph lawn care company, and the site turns those visits into quote requests. Each figure below carries its evidence status, and a ranking is a snapshot: it varies by location, device and day.",
         ],
       },
     ],
@@ -181,7 +187,7 @@ export const projects: Project[] = [
       "Systems give owners time back. Plan what happens after the form.",
     ],
     notice:
-      "Ranking positions for Yardex are being re-verified with Google Search Console and dated, location-specific checks. Until then they're shown as “awaiting verification”, not as claims.",
+      "The #2 ranking for “lawn care Guelph” is owner-reported. We're adding a dated Google Search Console export and location-specific checks so every ranking on this page carries a date and method.",
     relatedIndustry: "landscaping-web-design",
   },
   {
@@ -255,76 +261,6 @@ export const projects: Project[] = [
         ],
       },
     ],
-  },
-  {
-    slug: "ontario-deca",
-    name: "Ontario DECA",
-    shortName: "Ontario DECA",
-    url: "https://deca.ca/",
-    displayUrl: "deca.ca",
-    industry: "Education non-profit",
-    category: "Organisational website · Homepage design contribution",
-    relationship:
-      "Contribution, not a full build. Carter Florence served as an Ontario DECA Provincial Executive Officer (Chapter Engagement), May 2025 – June 2026. Flowsites does not claim to have designed or developed the full deca.ca website.",
-    year: "2025 – 2026",
-    services: ["Homepage design contributions", "SEO assistance", "Resource Hub & information architecture"],
-    headline: "Helping 17,000+ students find what they need, faster.",
-    summary:
-      "Homepage design contributions, SEO assistance and a central Resource Hub for one of Ontario's largest student organisations, made while serving on its provincial executive team.",
-    features: [
-      "Clear task-first homepage actions (judge registration, events calendar)",
-      "Central Chapter Resources hub so every chapter has the same tools",
-      "Simplified pathways: Resources, Chapter Visit Request, Meet Your Officers",
-      "Content organised by audience: members, advisors, partners, judges",
-    ],
-    accent: "#1c1f2b",
-    images: {
-      desktop: "/work/ontario-deca/desktop.webp",
-      mobile: "/work/ontario-deca/mobile.webp",
-      mobile2: "/work/ontario-deca/m2.webp",
-      sections: [
-        { src: "/work/ontario-deca/s2.webp", alt: "Ontario DECA resources section", caption: "Task-based pathways: resources, chapter visits, officers." },
-        { src: "/work/ontario-deca/s3.webp", alt: "Ontario DECA resources cards", caption: "DECA Resources cards on the current homepage." },
-      ],
-    },
-    capturedOn: CAPTURED,
-    metrics: [
-      {
-        value: "17,481",
-        label: "Ontario DECA members represented during the term",
-        evidence: { status: "historical", source: "carterflorence.com (2025–26 term)", checked: CAPTURED, note: "deca.ca currently states 18,050 members." },
-      },
-    ],
-    sections: [
-      {
-        id: "scope",
-        kicker: "01 · Scope",
-        title: "What we did, and what we didn't.",
-        body: [
-          "As one of ten Provincial Executive Officers, Carter led chapter engagement for the province. The verified parts of that work are building Ontario DECA's first central Resource Hub, so every chapter had the same cases, guides and training tools as the strongest ones, and running member communications.",
-          "Homepage design contributions and SEO assistance are part of this project's scope as reported by the founder. Exactly which current homepage elements came from that work is being confirmed with Ontario DECA. The site is managed by the organisation and has changed since, so the screenshots show the homepage as it stands today, not as a Flowsites deliverable.",
-        ],
-      },
-      {
-        id: "ia",
-        kicker: "02 · Information architecture",
-        title: "Design for the task, not the org chart.",
-        body: [
-          "Students, advisors, judges and sponsors all arrive with one job to do. The homepage now opens with direct actions (judge registration, the events calendar, chapter resources) instead of making visitors dig through menus.",
-        ],
-        image: { src: "/work/ontario-deca/desktop.webp", alt: "Ontario DECA homepage", caption: "deca.ca homepage as captured 11 Nov 2026.", kind: "desktop" },
-      },
-      {
-        id: "lesson",
-        kicker: "03 · Why it matters to you",
-        title: "Clear navigation is a conversion feature.",
-        body: [
-          "A plumbing company has the same problem as a student organisation: different visitors want different things right away (emergency service, a quote, financing). We design the first screen around those tasks.",
-        ],
-      },
-    ],
-    notice:
-      "Scope pending confirmation: homepage design and SEO contributions are founder-reported and are being confirmed with Ontario DECA. The current deca.ca homepage may differ from the original contribution.",
   },
   {
     slug: "traitcrm",

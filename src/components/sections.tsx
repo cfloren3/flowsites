@@ -12,18 +12,18 @@ export function Guarantee({ showTerms = false }: { showTerms?: boolean }) {
   return (
     <section id="guarantee" className="relative bg-paper py-24 md:py-36" aria-labelledby="guarantee-title">
       <div className="container-x">
-        <div className="relative overflow-hidden rounded-[32px] border border-ink/10 bg-volt px-6 py-14 sm:px-12 md:py-20 lg:px-20">
-          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full border-[1.5px] border-ink/15" />
-          <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-8 h-[18rem] w-[18rem] rounded-full border-[1.5px] border-ink/15" />
+        <div className="relative overflow-hidden on-dark rounded-[32px] border border-paper/10 bg-ink px-6 text-paper py-14 sm:px-12 md:py-20 lg:px-20">
+          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full border-[1.5px] border-volt/30" />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-8 h-[18rem] w-[18rem] rounded-full border-[1.5px] border-volt/30" />
           <div className="relative grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <p className="label text-ink/60">The no-risk design guarantee</p>
-              <SplitText id="guarantee-title" text={"See it first.\nLove it before you pay."} className="display mt-6 text-[clamp(2.8rem,7vw,6.4rem)]" accentClassName="" />
-              <p className="lede mt-8 max-w-xl text-ink/75">
+              <p className="label text-volt">The no-risk design guarantee</p>
+              <SplitText id="guarantee-title" text={"See it first.\nLove it *before* *you* *pay.*"} className="display mt-6 text-[clamp(2.8rem,7vw,6.4rem)]" accentClassName="text-volt" />
+              <p className="lede mt-8 max-w-xl text-paper/75">
                 Our work should speak for itself. We design your homepage and show you what your business could look like online before asking for a commitment. If the design isn&apos;t right for you, you don&apos;t pay.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
-                <Button href="/free-website-preview" size="lg">
+                <Button href="/free-website-preview" variant="accent" size="lg">
                   Get my free website preview
                 </Button>
                 {!showTerms ? (
@@ -41,11 +41,11 @@ export function Guarantee({ showTerms = false }: { showTerms?: boolean }) {
                   ["You review a private, live preview", "On your phone, like a customer would."],
                   ["Love it? We quote the full build.", "Not for you? You owe nothing."],
                 ].map(([t, b], i) => (
-                  <Reveal as="li" key={t} delay={i * 90} className="flex gap-4 rounded-2xl bg-ink/[0.06] p-4 backdrop-blur">
-                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-ink text-sm font-medium text-volt">{i + 1}</span>
+                  <Reveal as="li" key={t} delay={i * 90} className="flex gap-4 rounded-2xl border border-paper/10 bg-paper/[0.05] p-4">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-volt text-sm font-medium text-ink">{i + 1}</span>
                     <div>
                       <p className="font-semibold tracking-[-0.02em]">{t}</p>
-                      <p className="text-sm text-ink/65">{b}</p>
+                      <p className="text-sm text-paper/65">{b}</p>
                     </div>
                   </Reveal>
                 ))}
@@ -53,7 +53,7 @@ export function Guarantee({ showTerms = false }: { showTerms?: boolean }) {
             </div>
           </div>
           {showTerms ? (
-            <div className="relative mt-14 rounded-2xl bg-paper p-6 md:p-8">
+            <div className="relative mt-14 rounded-2xl bg-paper p-6 text-ink md:p-8">
               <h3 className="text-xl font-semibold tracking-[-0.02em]">Preview guarantee terms</h3>
               <ul className="mt-5 grid gap-3 md:grid-cols-2">
                 {previewTerms.map((t) => (
@@ -143,7 +143,7 @@ export function Pricing({ detailed = false, showHeader = true }: { detailed?: bo
           </div>
           <Reveal delay={150} className="lg:col-span-5">
             <p className="text-stone leading-relaxed">
-              Professional websites from <strong className="text-ink">$750 CAD</strong>, with a no-risk design preview. Final scope and price are confirmed in a written quote before any work you pay for begins.
+              Professional websites starting at <strong className="text-ink">$750 CAD</strong>, with a no-risk design preview. Final scope and price are confirmed in a written quote before any work you pay for begins.
             </p>
           </Reveal>
         </div>
@@ -205,7 +205,7 @@ export function Pricing({ detailed = false, showHeader = true }: { detailed?: bo
 
 function CostBreakdown() {
   const rows: [string, string, string][] = [
-    ["Website design & development", "One-time project fee", "From $750 CAD, confirmed in writing"],
+    ["Website design & development", "One-time project fee", "Starting at $750 CAD, confirmed in writing"],
     ["Design preview", "Before you commit", "Free. No deposit, no obligation"],
     ["Domain name", "Third party, usually yearly", "Paid by you, directly to the registrar"],
     ["Hosting", "Third party or care plan", "Paid by you, or included in a care plan if agreed"],
@@ -331,10 +331,10 @@ export function faqSchema(items: { q: string; a: string }[] = faqs) {
 export function FinalCta({ title = "Your next customer is searching.\n*Make* *sure* *they* *find* *you.*" }: { title?: string }) {
   return (
     <section className="on-dark relative overflow-hidden bg-ink py-28 text-paper md:py-40 grain" aria-labelledby="cta-title">
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-full h-[50rem] w-[80rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(201,242,107,.16),transparent)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-full h-[50rem] w-[80rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--p-accent)_16%,transparent),transparent)]" />
       <div className="container-x relative text-center">
         <Reveal>
-          <p className="label text-paper/50">From $750 CAD · Love the design or don&apos;t pay</p>
+          <p className="label text-paper/50">Starting at $750 CAD · Love the design or don&apos;t pay</p>
         </Reveal>
         <SplitText id="cta-title" text={title} accentClassName="text-paper/45" className="display mx-auto mt-8 max-w-[18ch] text-[clamp(2.6rem,7vw,6.8rem)]" />
         <Reveal delay={200} className="mt-12 flex flex-wrap justify-center gap-3">

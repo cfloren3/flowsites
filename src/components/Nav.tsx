@@ -7,6 +7,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import clsx from "clsx";
 import { Logo } from "./Logo";
 import { nav, site } from "@/content/site";
+import { PaletteSwitcher } from "./PaletteSwitcher";
 
 export function Nav() {
   const pathname = usePathname();
@@ -54,8 +55,8 @@ export function Nav() {
             className={clsx(
               "flex items-center justify-between rounded-full border pl-4 pr-2 py-2 transition-[background,border-color,box-shadow] duration-500",
               scrolled || open
-                ? "bg-paper/85 backdrop-blur-xl border-ink/10 shadow-[0_8px_30px_-12px_rgba(13,14,12,.18)]"
-                : "bg-paper/70 backdrop-blur-md border-ink/5",
+                ? "bg-paper/90 backdrop-blur-xl border-ink/10 shadow-[0_8px_30px_-12px_rgba(13,14,12,.18)]"
+                : "bg-paper/90 backdrop-blur-md border-ink/5",
             )}
           >
             <Link href="/" aria-label="Flowsites home" className="rounded-full">
@@ -69,7 +70,7 @@ export function Nav() {
                     aria-current={isActive(n.href) ? "page" : undefined}
                     className={clsx(
                       "relative rounded-full px-3.5 py-2 text-[0.92rem] transition-colors",
-                      isActive(n.href) ? "text-ink" : "text-ink/60 hover:text-ink",
+                      isActive(n.href) ? "text-ink" : "text-ink/75 hover:text-ink",
                     )}
                   >
                     {n.label}
@@ -79,9 +80,10 @@ export function Nav() {
               ))}
             </ul>
             <div className="flex items-center gap-2">
+              <PaletteSwitcher className="hidden xl:flex" />
               <Link
                 href="/contact"
-                className="hidden md:inline-flex rounded-full px-4 py-2.5 text-[0.92rem] text-ink/70 hover:text-ink"
+                className="hidden md:inline-flex rounded-full px-4 py-2.5 text-[0.92rem] text-ink/75 hover:text-ink"
               >
                 Contact
               </Link>
@@ -146,7 +148,11 @@ export function Nav() {
                 <Link href="/free-website-preview" className="flex items-center justify-center gap-2 rounded-full bg-volt py-4 font-medium text-ink">
                   Get my free website preview
                 </Link>
-                <p className="label text-center text-paper/50">From $750 CAD · Love the design or don&apos;t pay</p>
+                <p className="label text-center text-paper/50">Starting at $750 CAD · Love the design or don&apos;t pay</p>
+                <div className="flex items-center justify-center gap-3">
+                  <span className="label text-paper/60">Palette</span>
+                  <PaletteSwitcher dark />
+                </div>
                 <p className="text-center text-sm text-paper/50">
                   <a href={`mailto:${site.email}`} className="underline underline-offset-4">
                     {site.email}
