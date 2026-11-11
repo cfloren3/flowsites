@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flowsites website
 
-## Getting Started
-
-First, run the development server:
+Premium web design & local SEO agency site for Ontario trades. Built with Next.js 15 (App Router), TypeScript, Tailwind CSS v4, Motion, Lenis and Lucide.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npm start   # production
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Strategy, research, brand system and keyword plan: [`docs/STRATEGY.md`](docs/STRATEGY.md).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where content lives
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All business facts are in typed data files, so copy changes never require touching components.
 
-## Learn More
+| File | What it controls |
+|---|---|
+| `src/content/site.ts` | Business name, domain, email, phone, starting price, preview-guarantee terms, nav |
+| `src/content/projects.ts` | Portfolio + case studies (copy, screenshots, metrics, evidence) |
+| `src/content/evidence.ts` | Evidence labels: Verified / Client-reported / Historical / Not yet verified |
+| `src/content/rankings.ts` | Keyword ranking records (Yardex) + **demonstration** dashboard data |
+| `src/content/services.ts` | The three services, inclusions, exclusions, SEO titles |
+| `src/content/industries.ts` | Industry landing pages (each written for its trade) |
+| `src/content/articles.ts` | Resources / blog articles |
+| `src/content/faq.ts` | FAQ (also emitted as FAQPage schema) |
 
-To learn more about Next.js, take a look at the following resources:
+### Adding a metric
+Every metric needs an `evidence` object. Never add a number without one:
+```ts
+{ value: "Top 3", label: "…", evidence: { status: "verified", source: "ThreeBest Rated", sourceUrl: "https://…", checked: "2026-11-11" } }
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Recording a verified ranking
+Edit `yardexRankings` in `src/content/rankings.ts`. Fill **all** fields (engine, location, device, type: Organic / Map pack / Search Console avg. position, position, checked date, method) and set `status: "verified"`. Organic, map-pack and Search Console figures must be separate records.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Adding an industry page
+Add an entry to `industries.ts`. It's automatically routed, linked, and added to the sitemap. Only add pages with genuinely distinct content and search intent. No doorway pages.
 
-## Deploy on Vercel
+### Updating screenshots
+Screenshots in `public/work/<slug>/` were captured from the live sites with Playwright on 2026-11-11 (desktop 1440×900, mobile 390×844), converted to WebP. Re-capture and update `capturedOn` in `projects.ts` when a site changes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Lead form
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`POST /api/inquiry`, with validation shared by client and server (`src/lib/inquiry.ts`).
+
+Delivery, configured with environment variables (see `.env.example`):
+1. **Resend**: set `RESEND_API_KEY`, `INQUIRY_TO_EMAIL`, and `INQUIRY_FROM_EMAIL` (a verified sender domain).
+2. **Development fallback**: with no keys and `NODE_ENV !== production`, submissions are appended to `.data/inquiries.jsonl`.
+3. **Production without keys**: the API returns 503 and the visitor is told to email instead. Leads are never silently dropped.
+
+Spam protection: honeypot field, minimum fill time, per-IP rate limit (in-memory; use a shared store such as Upstash when running on multiple instances), and optional Cloudflare Turnstile (`NEXT_PUBLIC_TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY`).
+
+## SEO
+
+- Static generation for every page; per-page titles, descriptions, canonicals
+- `sitemap.xml` and `robots.txt` generated from content files
+- JSON-LD: ProfessionalService (service-area business, no street address), WebSite, Service, BreadcrumbList, FAQPage, Article, CreativeWork
+- Dynamic Open Graph image (`src/app/opengraph-image.tsx`)
+- Set `NEXT_PUBLIC_SITE_URL` to the production domain before deploying
+
+## Motion & accessibility
+
+- Scroll reveals are CSS-driven and gated on a `js` class, so content is visible without JavaScript and to crawlers
+- Above-the-fold entrances use pure CSS keyframes (no hydration wait)
+- `prefers-reduced-motion`: Lenis, parallax, marquee, scroll-pinned sections and reveals are disabled; pinned sections render static alternatives
+- Skip link, visible focus rings, labelled controls, accessible form errors, keyboard-reachable chart values
