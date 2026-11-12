@@ -17,21 +17,21 @@ export const metadata: Metadata = {
 };
 
 /**
- * Conversion sequence: value → proof → problem → transformation → "picture yours" →
- * credibility → SEO → process → pricing & guarantee → objections → first step.
+ * Conversion sequence: value → the #1-on-Google question and answer → proof → problem →
+ * transformation → "picture yours" → credibility → process → pricing & guarantee → objections → first step.
  */
 export default function Home() {
   return (
     <>
       <JsonLd data={faqSchema()} />
       <Hero />
+      <SearchIntro />
+      <RankClimb />
       <FeaturedWork />
       <Problem />
       <TransformStory />
       <SampleStudio />
       <FounderStory compact />
-      <SearchIntro />
-      <RankClimb />
       <Process />
       <Pricing />
       <Guarantee />
