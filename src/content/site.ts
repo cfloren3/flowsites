@@ -12,8 +12,8 @@ export const site = {
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "", // left empty until a business line exists
   tagline: "Built to stand out. Engineered to get found.",
   description:
-    "Flowsites designs premium, fast, search-ready websites for Ontario trades, restaurants and local businesses. Custom websites starting at $750 CAD, local SEO, and ongoing growth. See your design before you pay.",
-  startingPrice: 750,
+    "Flowsites designs premium, fast, search-ready websites for Ontario trades, restaurants and local businesses. Custom websites starting at $995 CAD, local SEO, and ongoing growth. See your design before you pay.",
+  startingPrice: 995,
   currency: "CAD",
   // Service-area business: no storefront or office is claimed.
   base: "Guelph, Ontario",

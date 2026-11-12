@@ -17,7 +17,7 @@ export function Footer() {
             <p className="mt-6 max-w-sm text-paper/60 leading-relaxed">
               Premium websites, local SEO and ongoing growth for Ontario&apos;s trades, restaurants and local businesses. Based in Guelph, working across Ontario.
             </p>
-            <p className="label mt-6 text-paper/55">Websites starting at $750 CAD · See it before you pay</p>
+            <p className="label mt-6 text-paper/55">Websites starting at $995 CAD · See it before you pay</p>
             <a href={`mailto:${site.email}`} className="mt-6 inline-block text-lg underline decoration-paper/30 underline-offset-4 hover:decoration-volt">
               {site.email}
             </a>

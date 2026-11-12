@@ -11,6 +11,7 @@ import type { Project } from "@/content/projects";
 const filters = [
   { k: "all", label: "All work" },
   { k: "trades", label: "Trades & local", match: ["yardex-guelph"] },
+  { k: "seo", label: "SEO results", match: ["yardex-guelph", "ontario-deca"] },
   { k: "brand", label: "Brand & editorial", match: ["carter-florence"] },
   { k: "product", label: "Software & product", match: ["traitcrm"] },
 ];

@@ -53,7 +53,7 @@ const orgSchema = {
       description: site.description,
       logo: `${site.url}/icon.svg`,
       image: `${site.url}/opengraph-image`,
-      priceRange: "Starting at $750 CAD",
+      priceRange: "Starting at $995 CAD",
       currenciesAccepted: "CAD",
       // Service-area business: no street address is published.
       areaServed: { "@type": "AdministrativeArea", name: "Ontario, Canada" },
@@ -66,7 +66,7 @@ const orgSchema = {
           "@type": "Offer",
           itemOffered: { "@type": "Service", name: s.name, url: `${site.url}/services/${s.slug}` },
           ...(s.slug === "web-design"
-            ? { priceSpecification: { "@type": "PriceSpecification", minPrice: 750, priceCurrency: "CAD" } }
+            ? { priceSpecification: { "@type": "PriceSpecification", minPrice: 995, priceCurrency: "CAD" } }
             : {}),
         })),
       },

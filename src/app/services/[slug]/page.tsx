@@ -39,7 +39,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           provider: { "@id": `${site.url}/#business` },
           areaServed: { "@type": "AdministrativeArea", name: "Ontario, Canada" },
           url: `${site.url}/services/${s.slug}`,
-          ...(s.slug === "web-design" ? { offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", minPrice: 750, priceCurrency: "CAD" } } } : {}),
+          ...(s.slug === "web-design" ? { offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", minPrice: 995, priceCurrency: "CAD" } } } : {}),
         }}
       />
       <JsonLd data={breadcrumbSchema(site.url, [{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: s.name, path: `/services/${s.slug}` }])} />

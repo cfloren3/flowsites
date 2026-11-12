@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Flowsites: Built to stand out. Engineered to get found. Websites starting at $750 CAD.";
+export const alt = "Flowsites: Built to stand out. Engineered to get found. Websites starting at $995 CAD.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default function OG() {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "rgba(255,255,255,.75)" }}>
           <div>Web design &amp; local SEO for Ontario trades</div>
-          <div style={{ display: "flex", background: "#FF6B57", color: "#0B1B33", padding: "8px 20px", borderRadius: 999 }}>Starting at $750 CAD</div>
+          <div style={{ display: "flex", background: "#FF6B57", color: "#0B1B33", padding: "8px 20px", borderRadius: 999 }}>Starting at $995 CAD</div>
         </div>
       </div>
     ),

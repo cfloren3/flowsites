@@ -4,11 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 import { services } from "@/content/services";
 import { PageHero, Reveal } from "@/components/ui";
 import { FinalCta, Guarantee } from "@/components/sections";
+import { Process } from "@/components/home/Process";
 
 export const metadata: Metadata = {
   title: "Services: Web Design, Local SEO & Website Care",
   description:
-    "Website design starting at $750 CAD, local SEO and ongoing website growth for Ontario contractors and service businesses. Three services that work together.",
+    "Website design starting at $995 CAD, local SEO and ongoing website growth for Ontario contractors and service businesses. Three services that work together.",
   alternates: { canonical: "/services" },
 };
 
@@ -56,6 +57,7 @@ export default function ServicesPage() {
           ))}
         </ol>
       </section>
+      <Process />
       <Guarantee />
       <FinalCta />
     </>

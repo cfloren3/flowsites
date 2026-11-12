@@ -6,6 +6,8 @@ import { getProject } from "@/content/projects";
 import { BrowserFrame } from "@/components/Frames";
 import { Eyebrow, PageHero, Reveal, SplitText } from "@/components/ui";
 import { ContactBlock } from "@/components/ContactBlock";
+import { FounderStory } from "@/components/home/FounderStory";
+import { WhyFlowsites } from "@/components/sections";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
@@ -112,6 +114,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <FounderStory />
+      <WhyFlowsites />
       <ContactBlock title={"Let's talk about\n*your* *business.*"} interest="general" />
     </>
   );

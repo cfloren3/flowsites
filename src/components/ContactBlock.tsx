@@ -17,7 +17,7 @@ export function ContactBlock({
       <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-1/3 h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--p-accent)_10%,transparent),transparent)]" />
       <div className="container-x relative grid gap-14 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <p className="label text-paper/50">Start here · Websites starting at $750 CAD</p>
+          <p className="label text-paper/50">Start here · Websites starting at $995 CAD</p>
           <SplitText id={`${id}-title`} text={title} accentClassName="text-paper/45" className="display mt-6 text-[clamp(2.5rem,5.4vw,5rem)]" />
           <ul className="mt-12 space-y-5">
             {[

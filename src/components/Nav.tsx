@@ -148,7 +148,7 @@ export function Nav() {
                 <Link href="/free-website-preview" className="flex items-center justify-center gap-2 rounded-full bg-volt py-4 font-medium text-ink">
                   Get my free website preview
                 </Link>
-                <p className="label text-center text-paper/50">Starting at $750 CAD · Love the design or don&apos;t pay</p>
+                <p className="label text-center text-paper/50">Starting at $995 CAD · Love the design or don&apos;t pay</p>
                 <div className="flex items-center justify-center gap-3">
                   <span className="label text-paper/60">Palette</span>
                   <PaletteSwitcher dark />

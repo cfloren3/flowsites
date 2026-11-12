@@ -191,6 +191,107 @@ export const projects: Project[] = [
     relatedIndustry: "landscaping-web-design",
   },
   {
+    slug: "ontario-deca",
+    name: "Ontario DECA",
+    shortName: "Ontario DECA",
+    url: "https://deca.ca/",
+    displayUrl: "deca.ca",
+    industry: "Education non-profit",
+    category: "SEO case study · Organisational website",
+    relationship:
+      "SEO project. Carter Florence led the search work while serving as an Ontario DECA Provincial Executive Officer (Chapter Engagement), May 2025 – June 2026. The deca.ca website itself is managed by Ontario DECA; Flowsites does not claim to have designed or built the full site.",
+    year: "2025 – 2026",
+    services: ["SEO strategy", "Keyword research", "On-page SEO", "Resource Hub & content structure"],
+    headline: "#1 on Google for “high school case competitions Canada”.",
+    summary:
+      "SEO for one of Ontario's largest student organisations, putting Ontario DECA at the top of Google for the searches students, parents and teachers actually make.",
+    features: [
+      "Rankings for the organisation's own name against a large US parent brand",
+      "Top position for a high-intent category search: “high school case competitions Canada”",
+      "Task-first homepage pathways: judge registration, events calendar, chapter resources",
+      "A central Chapter Resources hub that gives search engines and members one clear destination",
+    ],
+    accent: "#1c1f2b",
+    images: {
+      desktop: "/work/ontario-deca/desktop.webp",
+      mobile: "/work/ontario-deca/mobile.webp",
+      mobile2: "/work/ontario-deca/m2.webp",
+      sections: [
+        { src: "/work/ontario-deca/s2.webp", alt: "Ontario DECA resources section", caption: "Task-based pathways: resources, chapter visits, officers." },
+        { src: "/work/ontario-deca/s3.webp", alt: "Ontario DECA resources cards", caption: "DECA Resources: one clear destination for chapter material." },
+      ],
+    },
+    capturedOn: CAPTURED,
+    metrics: [
+      {
+        value: "#1",
+        label: "On Google for “high school case competitions Canada”",
+        evidence: { status: "client-reported", source: "Reported by Flowsites founder", checked: CAPTURED, note: "Dated screenshot / Search Console export pending." },
+      },
+      {
+        value: "#2",
+        label: "On Google for “DECA” in Canada, behind the international DECA Inc. site",
+        evidence: { status: "client-reported", source: "Reported by Flowsites founder", checked: CAPTURED, note: "Dated screenshot / Search Console export pending." },
+      },
+      {
+        value: "18,050",
+        label: "Members listed on deca.ca, the audience this search work reaches",
+        evidence: { status: "verified", source: "deca.ca homepage", sourceUrl: "https://deca.ca/", checked: CAPTURED },
+      },
+    ],
+    sections: [
+      {
+        id: "challenge",
+        kicker: "01 · The challenge",
+        title: "A Canadian chapter competing with a global brand.",
+        body: [
+          "Search “DECA” and you're competing with DECA Inc., the international organisation in the United States, plus every school chapter, news story and social account that uses the name. For Ontario students, parents and teachers, the provincial organisation needed to be the obvious result.",
+          "Beyond the brand name, the bigger opportunity was category searches: people who don't know DECA yet but are looking for business case competitions for high school students in Canada.",
+        ],
+      },
+      {
+        id: "approach",
+        kicker: "02 · The SEO approach",
+        title: "Own the brand. Then own the category.",
+        body: [
+          "The same playbook we use for local businesses: understand what people actually search for, make sure one clear page answers each search, and make that page easy for Google to understand.",
+        ],
+        bullets: [
+          "Keyword research across brand searches (“DECA”, “Ontario DECA”) and category searches (“high school case competitions Canada”)",
+          "On-page SEO: page titles, headings and copy aligned to those searches",
+          "A central Resource Hub so chapter material lives in one crawlable place instead of scattered files",
+          "Clear internal pathways from the homepage to events, resources and registration",
+        ],
+        image: { src: "/work/ontario-deca/desktop.webp", alt: "Ontario DECA homepage", caption: "deca.ca homepage as captured 11 Nov 2026.", kind: "desktop" },
+      },
+      {
+        id: "outcomes",
+        kicker: "03 · Results",
+        title: "Found first by the people it's for.",
+        body: [
+          "Ontario DECA ranks #1 for “high school case competitions Canada” and #2 for “DECA”, sitting directly under the international organisation's own site. Rankings vary by location, device and day; each figure below carries its evidence status.",
+        ],
+      },
+      {
+        id: "lesson",
+        kicker: "04 · Why it matters to you",
+        title: "Category searches are where new customers come from.",
+        body: [
+          "Most of your future customers don't know your name yet. They search for what you do: “landscaping Guelph”, “brunch near me”, “roof repair Kitchener”. Winning those category searches is exactly what we did for Ontario DECA, and exactly what we'll plan for your business.",
+        ],
+      },
+    ],
+    lessons: [
+      "Rank for your own name first. If customers can't find you by name, nothing else matters.",
+      "Then target the category: what people search before they know you exist.",
+      "One clear page per search beats one page that tries to rank for everything.",
+      "Organise your content so both people and Google can find it.",
+    ],
+    notice:
+      "Rankings are client-reported. We're adding dated screenshots and Search Console data so every position on this page carries a date, location and method.",
+    relatedIndustry: "professional-services-web-design",
+  },
+  {
     slug: "carter-florence",
     name: "Carter Florence",
     shortName: "Carter Florence",

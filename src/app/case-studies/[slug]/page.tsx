@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Info } from "lucide-react";
 import { getProject, projects } from "@/content/projects";
 import { getIndustry } from "@/content/industries";
-import { yardexRankings } from "@/content/rankings";
+import { rankingsBySlug } from "@/content/rankings";
 import { evidenceMeta } from "@/content/evidence";
 import { site } from "@/content/site";
 import { BrowserFrame, PhoneFrame } from "@/components/Frames";
@@ -223,7 +223,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           <div className="container-x">
             <Eyebrow>For your business</Eyebrow>
             <h2 id="lessons-title" className="h-section mt-6 max-w-[18ch]">
-              Lessons any trades business can use.
+              Lessons any business can use.
             </h2>
             <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-ink/10 bg-ink/10 md:grid-cols-2 lg:grid-cols-3">
               {p.lessons.map((l, i) => (
@@ -295,15 +295,15 @@ function Outcomes({ slug }: { slug: string }) {
         </dl>
       ) : null}
 
-      {slug === "yardex-guelph" ? (
+      {rankingsBySlug[slug]?.length ? (
         <div id="rankings" className="overflow-hidden rounded-3xl border border-ink/10 bg-paper">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/10 p-5">
             <p className="font-semibold tracking-[-0.02em]">Keyword ranking records</p>
-            <EvidenceBadge evidence={{ status: "unverified" }} />
+            <EvidenceBadge evidence={{ status: "client-reported" }} />
           </div>
           <div className="overflow-x-auto" data-lenis-prevent>
             <table className="w-full min-w-[640px] text-left text-sm">
-              <caption className="sr-only">Yardex Guelph keyword ranking records and verification status</caption>
+              <caption className="sr-only">{p.name} keyword ranking records and verification status</caption>
               <thead>
                 <tr className="label text-stone">
                   {["Keyword", "Engine", "Location", "Device", "Type", "Position", "Checked", "Status"].map((h) => (
@@ -314,7 +314,7 @@ function Outcomes({ slug }: { slug: string }) {
                 </tr>
               </thead>
               <tbody>
-                {yardexRankings.map((r) => (
+                {rankingsBySlug[slug].map((r) => (
                   <tr key={r.keyword} className="border-t border-ink/10">
                     <th scope="row" className="px-4 py-3 font-medium">{r.keyword}</th>
                     <td className="px-4 py-3 text-stone">{r.engine}</td>
@@ -330,7 +330,7 @@ function Outcomes({ slug }: { slug: string }) {
             </table>
           </div>
           <p className="border-t border-ink/10 p-5 text-sm leading-relaxed text-stone">
-            Ranking positions are not shown until they can be verified with Google Search Console or a dated, location-specific check. Organic results, map-pack results and Search Console average positions are recorded separately because they measure different things.
+            Positions marked client-reported come from the business owner; we&apos;re adding dated screenshots and Search Console data to verify them. Rankings vary by location, device and day, and organic, map-pack and Search Console figures are recorded separately because they measure different things.
           </p>
         </div>
       ) : null}

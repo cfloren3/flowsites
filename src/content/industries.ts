@@ -25,7 +25,7 @@ export const industries: Industry[] = [
     title: "Websites for landscaping & lawn care companies",
     metaTitle: "Landscaping & Lawn Care Website Design in Ontario",
     metaDescription:
-      "Website design and local SEO for Ontario landscaping and lawn care companies, built by people who run a lawn care business. Starting at $750 CAD. See your design first.",
+      "Website design and local SEO for Ontario landscaping and lawn care companies, built by people who run a lawn care business. Starting at $995 CAD. See your design first.",
     hero: "Your lawns look sharp. Your website should too.",
     intro:
       "We run a lawn care company, so we know the season: a spring rush of quote requests, recurring routes to protect, and fall cleanups to fill. Your site should capture all of it.",
@@ -54,7 +54,7 @@ export const industries: Industry[] = [
     title: "Websites for general contractors & renovation companies",
     metaTitle: "Contractor & Renovation Company Website Design in Ontario",
     metaDescription:
-      "Websites for Ontario general contractors and renovation companies: project portfolios, qualified-lead forms and local SEO. Starting at $750 CAD with a free design preview.",
+      "Websites for Ontario general contractors and renovation companies: project portfolios, qualified-lead forms and local SEO. Starting at $995 CAD with a free design preview.",
     hero: "Big projects start with a credible first impression.",
     intro:
       "Renovation clients are about to spend tens of thousands of dollars. Before they call, they judge your portfolio, your process and how established you look.",
@@ -82,7 +82,7 @@ export const industries: Industry[] = [
     title: "Websites for roofing contractors",
     metaTitle: "Roofing Contractor Website Design in Ontario",
     metaDescription:
-      "Roofing websites for Ontario contractors: emergency-ready layouts, inspection booking, insurance-claim guidance and local SEO. Starting at $750 CAD with a free design preview.",
+      "Roofing websites for Ontario contractors: emergency-ready layouts, inspection booking, insurance-claim guidance and local SEO. Starting at $995 CAD with a free design preview.",
     hero: "When the roof leaks, they call whoever looks most trustworthy.",
     intro:
       "Roofing searches split into two moments: a leak or storm right now, or a planned replacement. Your site needs to serve both on the first screen.",
@@ -105,7 +105,7 @@ export const industries: Industry[] = [
     title: "Websites for plumbing companies",
     metaTitle: "Plumbing Company Website Design in Ontario",
     metaDescription:
-      "Plumbing websites built for emergency calls and local search across Ontario: tap-to-call, service pages and fast mobile performance. Starting at $750 CAD.",
+      "Plumbing websites built for emergency calls and local search across Ontario: tap-to-call, service pages and fast mobile performance. Starting at $995 CAD.",
     hero: "Burst pipe at 11pm? You need to be the first number they tap.",
     intro:
       "Plumbing is one of the most mobile, most urgent local searches there is. Speed, clarity and a phone number that's always visible win the call.",
@@ -128,7 +128,7 @@ export const industries: Industry[] = [
     title: "Websites for electricians & electrical contractors",
     metaTitle: "Electrician Website Design in Ontario",
     metaDescription:
-      "Websites for Ontario electricians: ECRA/ESA licensing front and centre, residential and commercial service pages, EV charger and panel upgrade content. Starting at $750 CAD.",
+      "Websites for Ontario electricians: ECRA/ESA licensing front and centre, residential and commercial service pages, EV charger and panel upgrade content. Starting at $995 CAD.",
     hero: "Licensed, safe, local. Make it obvious in five seconds.",
     intro:
       "Homeowners know electrical work is dangerous and regulated. Your site should prove you're licensed and capable before they've scrolled.",
@@ -151,7 +151,7 @@ export const industries: Industry[] = [
     title: "Websites for HVAC companies",
     metaTitle: "HVAC Company Website Design in Ontario",
     metaDescription:
-      "HVAC websites for Ontario heating and cooling companies: seasonal campaigns, maintenance plans, rebate information and local SEO. Starting at $750 CAD.",
+      "HVAC websites for Ontario heating and cooling companies: seasonal campaigns, maintenance plans, rebate information and local SEO. Starting at $995 CAD.",
     hero: "Be the obvious call when the furnace quits in January.",
     intro:
       "HVAC demand is seasonal and high-stakes. Your site should handle emergency calls in winter and summer, and sell maintenance plans in between.",
@@ -174,7 +174,7 @@ export const industries: Industry[] = [
     title: "Websites for cleaning, pressure-washing & window-cleaning companies",
     metaTitle: "Cleaning Company Website Design in Ontario",
     metaDescription:
-      "Websites for Ontario cleaning, pressure-washing and window-cleaning businesses: instant-quote flows, recurring bookings and visual proof. Starting at $750 CAD.",
+      "Websites for Ontario cleaning, pressure-washing and window-cleaning businesses: instant-quote flows, recurring bookings and visual proof. Starting at $995 CAD.",
     hero: "Spotless work deserves a spotless first impression.",
     intro:
       "Cleaning and exterior services sell on visual proof and convenience. Before/after imagery and an easy quote flow do most of the selling.",
@@ -197,7 +197,7 @@ export const industries: Industry[] = [
     title: "Websites for restaurants, cafés & bakeries",
     metaTitle: "Restaurant & Café Website Design in Ontario",
     metaDescription:
-      "Restaurant and café websites for Ontario: fast mobile menus, hours, reservations and online ordering links, plus local SEO for “near me” searches. Starting at $750 CAD.",
+      "Restaurant and café websites for Ontario: fast mobile menus, hours, reservations and online ordering links, plus local SEO for “near me” searches. Starting at $995 CAD.",
     hero: "Hungry people decide in seconds. Make yours the easy choice.",
     intro:
       "Restaurant searches are fast, mobile and local. People want the menu, the hours and a way to book or order, ideally without pinching to zoom on a PDF.",
@@ -220,7 +220,7 @@ export const industries: Industry[] = [
     title: "Websites for independent retailers & local shops",
     metaTitle: "Retail & Local Shop Website Design in Ontario",
     metaDescription:
-      "Websites for Ontario independent shops and boutiques: product highlights, store hours, local SEO and optional online store links. Starting at $750 CAD.",
+      "Websites for Ontario independent shops and boutiques: product highlights, store hours, local SEO and optional online store links. Starting at $995 CAD.",
     hero: "Bring the shop-window feeling online.",
     intro:
       "Independent shops win on character and service. Your website should show what makes the store worth the trip, and make it easy to visit, call or buy.",
@@ -243,7 +243,7 @@ export const industries: Industry[] = [
     title: "Websites for salons, spas, clinics & fitness studios",
     metaTitle: "Salon, Spa & Wellness Website Design in Ontario",
     metaDescription:
-      "Websites for Ontario salons, spas, clinics and fitness studios: online booking, service menus, practitioner profiles and local SEO. Starting at $750 CAD.",
+      "Websites for Ontario salons, spas, clinics and fitness studios: online booking, service menus, practitioner profiles and local SEO. Starting at $995 CAD.",
     hero: "Fill your calendar, not your inbox.",
     intro:
       "Appointment businesses live and die by bookings. Your site should answer “what do you offer, what does it cost, and when can I come in?” without a phone call.",
@@ -266,7 +266,7 @@ export const industries: Industry[] = [
     title: "Websites for accountants, consultants, studios & local service firms",
     metaTitle: "Professional Services Website Design in Ontario",
     metaDescription:
-      "Websites for Ontario accountants, bookkeepers, consultants, photographers, real estate teams and other local service firms. Credibility-first design and local SEO. Starting at $750 CAD.",
+      "Websites for Ontario accountants, bookkeepers, consultants, photographers, real estate teams and other local service firms. Credibility-first design and local SEO. Starting at $995 CAD.",
     hero: "Look as established as the expertise you bring.",
     intro:
       "Clients choosing an accountant, consultant or photographer are buying trust. Your website should explain exactly what you do, who it's for and how to start.",

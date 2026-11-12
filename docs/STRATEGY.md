@@ -33,9 +33,9 @@ Market price signals (third-party, self-published — benchmarks only): a $995 "
 ### Where Flowsites can win (verifiable strengths only)
 1. **Range of evidence.** FoundFirst.ca shows trade marketing sites. Flowsites can show a trade site *and* a software product (TraitCRM, which Yardex runs on) and a personal-brand experience.
 2. **Operating depth.** Yardex is a working recurring business with about 50 weekly properties (owner-reported) and an owner-reported #2 Google ranking for "lawn care Guelph". Its tooling was built in-house. "We built a trades business, then the software to run it" is a claim FoundFirst can't make.
-3. **Entry price.** $750 vs a published $1,000, with the same preview-first promise.
+3. **Entry price.** $995, just under FoundFirst.ca's published $1,000, so price is no longer the differentiator: lead with proof (Yardex #2 for "lawn care Guelph", Ontario DECA #1 for "high school case competitions Canada", both client-reported) and the broader portfolio.
 4. **Evidence discipline.** Every metric on our site carries a Verified / Client-reported / Historical / Not-yet-verified label, with method and date. No competitor reviewed does this. It turns honesty into a differentiator.
-5. **Visual sophistication.** Motion, editorial typography and layered real-work previews raise perceived value above the $750 price point.
+5. **Visual sophistication.** Motion, editorial typography and layered real-work previews raise perceived value above the $995 price point.
 
 **Risk:** FoundFirst.ca's offer and story are very close to ours, and it is in the same city. We must not echo its phrasing ("found first", "see your site, free") and should lead with the strengths above.
 
@@ -44,7 +44,7 @@ Market price signals (third-party, self-published — benchmarks only): a $995 "
 > **Flowsites is the digital growth partner for Ontario's trades: premium websites, practical pricing, measurable results. Built by people who've run a trades business.**
 
 - Primary line: **"Built to stand out. Engineered to get found."**
-- Offer line: **"Custom websites from $750 CAD. See the design before you pay."**
+- Offer line: **"Custom websites from $995 CAD. See the design before you pay."**
 - Proof line: **"We didn't just build websites for trades. We built a trades business."**
 - AI stance: "Modern tools. Smarter processes. Better websites." AI is how we work, not what we sell.
 

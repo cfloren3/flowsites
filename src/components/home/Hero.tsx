@@ -99,7 +99,7 @@ export function Hero() {
         <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-12 md:items-end">
           <p className="rise-in lede max-w-xl text-paper/70 md:col-span-6" style={{ "--d": "450ms" } as React.CSSProperties}>
             Beautifully designed websites, local SEO and ongoing growth for Ontario trades, restaurants and local businesses.{" "}
-            <span className="text-paper">Websites starting at $750&nbsp;CAD.</span>
+            <span className="text-paper">Websites starting at $995&nbsp;CAD.</span>
           </p>
           <div className="rise-in md:col-span-6 md:justify-self-end" style={{ "--d": "600ms" } as React.CSSProperties}>
             <div className="flex flex-wrap gap-3">
@@ -226,7 +226,8 @@ export function Hero() {
                 <p className="mt-2 text-xl font-semibold tracking-[-0.03em]">{p.name}</p>
                 {p.metrics[0]?.value.startsWith("#") ? (
                   <p className="mt-2 text-sm text-paper/75">
-                    <span className="serif text-2xl text-volt">{p.metrics[0].value}</span> on Google for “lawn care Guelph”
+                    <span className="serif text-2xl text-volt">{p.metrics[0].value}</span>{" "}
+                    {p.metrics[0].label.charAt(0).toLowerCase() + p.metrics[0].label.slice(1)}
                   </p>
                 ) : null}
                 <Link href={`/case-studies/${p.slug}`} className="mt-3 inline-flex items-center gap-1.5 text-sm text-volt hover:underline underline-offset-4">

@@ -52,6 +52,36 @@ export const yardexRankings: RankingRecord[] = [
   pending("landscaping Guelph"),
 ];
 
+export const decaRankings: RankingRecord[] = [
+  {
+    keyword: "high school case competitions Canada",
+    engine: "Google",
+    location: "Canada",
+    device: "—",
+    type: "Organic",
+    position: 1,
+    checked: null,
+    method: "Founder-reported. Dated screenshot / Search Console export pending.",
+    status: "client-reported",
+  },
+  {
+    keyword: "DECA",
+    engine: "Google",
+    location: "Ontario, Canada",
+    device: "—",
+    type: "Organic",
+    position: 2,
+    checked: null,
+    method: "Founder-reported. Dated screenshot / Search Console export pending.",
+    status: "client-reported",
+  },
+];
+
+export const rankingsBySlug: Record<string, RankingRecord[]> = {
+  "yardex-guelph": yardexRankings,
+  "ontario-deca": decaRankings,
+};
+
 /**
  * DEMONSTRATION DATA ONLY. Used by the ranking dashboard component to show what
  * client reporting looks like. Not real rankings for any business.

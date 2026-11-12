@@ -1,6 +1,6 @@
 export const faqs = [
   {
-    q: "What does $750 actually get me?",
+    q: "What does $995 actually get me?",
     a: "A custom-designed, mobile-first website for a focused scope: typically a homepage plus a few core pages, a working quote form, and core technical SEO. Larger sites, extra pages or custom features cost more. Everything is confirmed in a written quote before work begins.",
   },
   {

@@ -97,7 +97,7 @@ export function WhyFlowsites() {
                 <p className="label text-paper/50">How we use AI</p>
                 <p className="mt-3 text-2xl font-semibold tracking-[-0.03em]">Modern tools. Smarter processes. Better websites.</p>
                 <p className="mt-3 text-sm leading-relaxed text-paper/65">
-                  We use AI-assisted workflows for research, competitor analysis, development and quality checks. That&apos;s part of how a $750 starting price is possible. Design, strategy and every final call stay human.
+                  We use AI-assisted workflows for research, competitor analysis, development and quality checks. That&apos;s part of how a $995 starting price is possible. Design, strategy and every final call stay human.
                 </p>
               </Reveal>
             </div>
@@ -143,7 +143,7 @@ export function Pricing({ detailed = false, showHeader = true }: { detailed?: bo
           </div>
           <Reveal delay={150} className="lg:col-span-5">
             <p className="text-stone leading-relaxed">
-              Professional websites starting at <strong className="text-ink">$750 CAD</strong>, with a no-risk design preview. Final scope and price are confirmed in a written quote before any work you pay for begins.
+              Professional websites starting at <strong className="text-ink">$995 CAD</strong>, with a no-risk design preview. Final scope and price are confirmed in a written quote before any work you pay for begins.
             </p>
           </Reveal>
         </div>
@@ -165,7 +165,7 @@ export function Pricing({ detailed = false, showHeader = true }: { detailed?: bo
                 <p className={clsx("mt-3 leading-relaxed", hero ? "text-paper/65" : "text-stone")}>{s.short}</p>
                 <p className="mt-8">
                   {hero ? <span className={clsx("label block", "text-paper/50")}>Starting at</span> : null}
-                  <span className="text-[2.6rem] font-semibold leading-none tracking-[-0.05em]">{hero ? "$750" : s.price}</span>
+                  <span className="text-[2.6rem] font-semibold leading-none tracking-[-0.05em]">{hero ? "$995" : s.price}</span>
                   {hero ? <span className="ml-2 text-paper/55">CAD</span> : null}
                 </p>
                 <p className={clsx("mt-3 text-sm leading-relaxed", hero ? "text-paper/55" : "text-stone")}>{s.priceNote}</p>
@@ -205,7 +205,7 @@ export function Pricing({ detailed = false, showHeader = true }: { detailed?: bo
 
 function CostBreakdown() {
   const rows: [string, string, string][] = [
-    ["Website design & development", "One-time project fee", "Starting at $750 CAD, confirmed in writing"],
+    ["Website design & development", "One-time project fee", "Starting at $995 CAD, confirmed in writing"],
     ["Design preview", "Before you commit", "Free. No deposit, no obligation"],
     ["Domain name", "Third party, usually yearly", "Paid by you, directly to the registrar"],
     ["Hosting", "Third party or care plan", "Paid by you, or included in a care plan if agreed"],
@@ -334,7 +334,7 @@ export function FinalCta({ title = "Your next customer is searching.\n*Make* *su
       <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-full h-[50rem] w-[80rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--p-accent)_16%,transparent),transparent)]" />
       <div className="container-x relative text-center">
         <Reveal>
-          <p className="label text-paper/50">Starting at $750 CAD · Love the design or don&apos;t pay</p>
+          <p className="label text-paper/50">Starting at $995 CAD · Love the design or don&apos;t pay</p>
         </Reveal>
         <SplitText id="cta-title" text={title} accentClassName="text-paper/45" className="display mx-auto mt-8 max-w-[18ch] text-[clamp(2.6rem,7vw,6.8rem)]" />
         <Reveal delay={200} className="mt-12 flex flex-wrap justify-center gap-3">

@@ -122,7 +122,7 @@ export const articles: Article[] = [
         "Can I see the design before I commit?",
       ] },
       { type: "h2", text: "How we price" },
-      { type: "p", text: "Flowsites websites start at $750 CAD for a focused, custom-designed site. We design your homepage first and show it to you. If you don't like it, you don't pay. If you do, we confirm the full scope and price in writing before development starts." },
+      { type: "p", text: "Flowsites websites start at $995 CAD for a focused, custom-designed site. We design your homepage first and show it to you. If you don't like it, you don't pay. If you do, we confirm the full scope and price in writing before development starts." },
     ],
     related: [
       { label: "Pricing", href: "/pricing" },

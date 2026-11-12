@@ -11,7 +11,7 @@ import { faqs } from "@/content/faq";
 export const metadata: Metadata = {
   title: "Free Website Preview: See Your New Website Before You Pay",
   description:
-    "Get a free, custom homepage design for your Ontario trades business. If you don't love it, you don't pay. Websites starting at $750 CAD.",
+    "Get a free, custom homepage design for your Ontario trades business. If you don't love it, you don't pay. Websites starting at $995 CAD.",
   alternates: { canonical: "/free-website-preview" },
 };
 
@@ -27,7 +27,7 @@ export default function PreviewPage() {
             </p>
             <SplitText immediate as="h1" id="preview-title" text={"See your new website\n*before* *you* *pay.*"} accentClassName="text-volt" className="display mt-6 text-[clamp(2.8rem,6vw,5.6rem)]" />
             <p className="lede mt-8 text-paper/70">
-              Tell us about your business. We&apos;ll design your homepage and send you a private link to explore on your phone. Love it, and we&apos;ll quote the full build from <strong className="text-paper">$750 CAD</strong>. Don&apos;t, and you owe nothing.
+              Tell us about your business. We&apos;ll design your homepage and send you a private link to explore on your phone. Love it, and we&apos;ll quote the full build from <strong className="text-paper">$995 CAD</strong>. Don&apos;t, and you owe nothing.
             </p>
             <ul className="mt-10 space-y-3">
               {["No deposit. No obligation.", "Built with your services, photos and reviews", "Planned for local search from day one", "Full scope and price in writing before any work you pay for"].map((t) => (
