@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "motion/react";
 import clsx from "clsx";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/content/projects";
+import { SeoVisual } from "./SeoVisual";
 
 const filters = [
   { k: "all", label: "All work" },
@@ -60,6 +61,8 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
                     i === 0 && f === "all" ? "aspect-[16/10] md:aspect-[21/9]" : "aspect-[16/11]",
                   )}
                 >
+                  {p.images ? (
+                    <>
                   <div className="absolute inset-[6%] bottom-0 overflow-hidden rounded-t-xl shadow-[0_30px_60px_-20px_rgba(13,14,12,.4)] transition-transform duration-[900ms] ease-[var(--ease-flow)] group-hover:-translate-y-2 group-hover:scale-[1.015]">
                     <Image src={p.images.desktop} alt={`${p.name} homepage`} fill sizes={i === 0 ? "90vw" : "(min-width:768px) 45vw, 90vw"} className="object-cover object-top" />
                   </div>
@@ -70,6 +73,12 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
                       </div>
                     </div>
                   </div>
+                    </>
+                  ) : p.seo ? (
+                    <div className="absolute inset-0 flex items-center justify-center p-[6%]">
+                      <SeoVisual searches={p.seo} compact className="w-full max-w-[460px] transition-transform duration-700 group-hover:-translate-y-1" />
+                    </div>
+                  ) : null}
                   <span className="absolute left-5 top-5 grid h-11 w-11 place-items-center rounded-full bg-paper text-ink opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
                     <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
                   </span>

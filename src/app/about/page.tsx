@@ -70,7 +70,7 @@ export default function AboutPage() {
           </div>
           <Reveal className="lg:col-span-5" variant="scale">
             <div className="lg:sticky lg:top-32">
-              <BrowserFrame src={cf.images.desktop} alt="carterflorence.com homepage" url={cf.displayUrl} sizes="(min-width:1024px) 38vw, 90vw" />
+              <BrowserFrame src={cf.images!.desktop} alt="carterflorence.com homepage" url={cf.displayUrl} sizes="(min-width:1024px) 38vw, 90vw" />
               <p className="label mt-4 text-stone">carterflorence.com · founder&apos;s personal site, designed and built in-house</p>
             </div>
           </Reveal>

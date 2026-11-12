@@ -13,6 +13,7 @@ import { Button, EvidenceBadge, Eyebrow, Reveal, SplitText, TextLink } from "@/c
 import { FinalCta } from "@/components/sections";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 import { RollingNumber } from "@/components/Type";
+import { SeoVisual } from "@/components/SeoVisual";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${p.name} Case Study: ${p.category.split(" · ")[0]}`,
     description: p.summary,
     alternates: { canonical: `/case-studies/${p.slug}` },
-    openGraph: { title: `${p.name} | Flowsites case study`, description: p.summary, images: [{ url: p.images.desktop }] },
+    openGraph: { title: `${p.name} | Flowsites case study`, description: p.summary, ...(p.images ? { images: [{ url: p.images.desktop }] } : {}) },
   };
 }
 
@@ -56,7 +57,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           about: { "@type": "WebSite", name: p.name, url: p.url },
           creator: { "@id": `${site.url}/#business` },
           description: p.summary,
-          image: `${site.url}${p.images.desktop}`,
+          ...(p.images ? { image: `${site.url}${p.images.desktop}` } : {}),
         }}
       />
 
@@ -101,12 +102,18 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
         <div className="container-x relative mt-16 md:mt-24">
           <div className="rise-in relative mx-auto max-w-[1240px] pb-16 md:pb-24" style={{ "--d": "300ms" } as React.CSSProperties}>
-            <div className="md:w-[86%]">
-              <BrowserFrame src={p.images.desktop} alt={`${p.name} desktop homepage, captured ${p.capturedOn}`} url={p.displayUrl} dark priority sizes="(min-width:1280px) 1060px, 90vw" />
-            </div>
-            <div className="absolute bottom-6 right-0 w-[28%] max-w-[260px] md:bottom-10">
-              <PhoneFrame src={p.images.mobile} alt={`${p.name} mobile homepage`} sizes="260px" />
-            </div>
+            {p.images ? (
+              <>
+                <div className="md:w-[86%]">
+                  <BrowserFrame src={p.images.desktop} alt={`${p.name} desktop homepage, captured ${p.capturedOn}`} url={p.displayUrl} dark priority sizes="(min-width:1280px) 1060px, 90vw" />
+                </div>
+                <div className="absolute bottom-6 right-0 w-[28%] max-w-[260px] md:bottom-10">
+                  <PhoneFrame src={p.images.mobile} alt={`${p.name} mobile homepage`} sizes="260px" />
+                </div>
+              </>
+            ) : p.seo ? (
+              <SeoVisual searches={p.seo} className="mx-auto max-w-[760px] text-paper" />
+            ) : null}
           </div>
         </div>
       </header>
@@ -189,6 +196,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       ) : null}
 
       {/* Gallery */}
+      {p.images ? (
       <section className="on-dark bg-ink py-20 text-paper md:py-28" aria-labelledby="gallery-title">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -198,8 +206,8 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             <p className="label text-paper/55">Real screens · captured {p.capturedOn}</p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {p.images.sections.map((img, i) => (
-              <Reveal key={img.src} delay={(i % 2) * 100} className={i === 0 && p.images.sections.length % 2 === 1 ? "md:col-span-2" : ""}>
+            {p.images!.sections.map((img, i) => (
+              <Reveal key={img.src} delay={(i % 2) * 100} className={i === 0 && p.images!.sections.length % 2 === 1 ? "md:col-span-2" : ""}>
                 <figure>
                   <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-paper/10">
                     <Image src={img.src} alt={img.alt} fill sizes="(min-width:768px) 45vw, 90vw" className="object-cover object-top transition-transform duration-[1.2s] ease-[var(--ease-flow)] hover:scale-[1.03]" />
@@ -208,15 +216,16 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                 </figure>
               </Reveal>
             ))}
-            {p.images.mobile2 ? (
+            {p.images!.mobile2 ? (
               <Reveal className="flex items-center justify-center gap-6 rounded-2xl border border-paper/10 bg-ink-2 p-8 md:col-span-2">
-                <PhoneFrame src={p.images.mobile} alt={`${p.name} on mobile, top of page`} className="w-[40%] max-w-[220px]" />
-                <PhoneFrame src={p.images.mobile2} alt={`${p.name} on mobile, scrolled`} className="w-[40%] max-w-[220px] translate-y-6" />
+                <PhoneFrame src={p.images!.mobile} alt={`${p.name} on mobile, top of page`} className="w-[40%] max-w-[220px]" />
+                <PhoneFrame src={p.images!.mobile2} alt={`${p.name} on mobile, scrolled`} className="w-[40%] max-w-[220px] translate-y-6" />
               </Reveal>
             ) : null}
           </div>
         </div>
       </section>
+      ) : null}
 
       {p.lessons ? (
         <section className="bg-paper py-20 md:py-28" aria-labelledby="lessons-title">

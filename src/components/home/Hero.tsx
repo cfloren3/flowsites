@@ -5,7 +5,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
-import { projects } from "@/content/projects";
+import { projects as allProjects, type Project } from "@/content/projects";
+
+type WithImages = Project & { images: NonNullable<Project["images"]> };
+const projects = allProjects.filter((p): p is WithImages => Boolean(p.images));
 import { Button, SplitText } from "../ui";
 import { Typewriter } from "../Type";
 

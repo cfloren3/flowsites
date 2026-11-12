@@ -8,6 +8,7 @@ import clsx from "clsx";
 import { projects, type Project } from "@/content/projects";
 import { BrowserFrame, PhoneFrame } from "../Frames";
 import { RollingNumber } from "../Type";
+import { SeoVisual } from "../SeoVisual";
 import { EvidenceBadge, Eyebrow, SplitText, Reveal, TextLink } from "../ui";
 
 export function FeaturedWork() {
@@ -140,14 +141,20 @@ function ProjectPanel({ project: p, index }: { project: Project; index: number }
         >
           <Link href={`/case-studies/${p.slug}`} className="absolute inset-0 z-20" aria-label={`Open the ${p.name} case study`} tabIndex={-1} />
           <div className="relative px-6 pb-10 pt-10 sm:px-10 lg:absolute lg:inset-0 lg:p-12">
-            <div className="relative h-full">
-              <div className="transition-transform duration-700 ease-[var(--ease-flow)] group-hover:scale-[1.01] lg:absolute lg:left-0 lg:top-0 lg:w-[88%]">
-                <BrowserFrame src={p.images.desktop} alt={`${p.name} desktop homepage`} url={p.displayUrl} dark={tone === "dark"} sizes="(min-width:1024px) 50vw, 90vw" />
+            {p.images ? (
+              <div className="relative h-full">
+                <div className="transition-transform duration-700 ease-[var(--ease-flow)] group-hover:scale-[1.01] lg:absolute lg:left-0 lg:top-0 lg:w-[88%]">
+                  <BrowserFrame src={p.images.desktop} alt={`${p.name} desktop homepage`} url={p.displayUrl} dark={tone === "dark"} sizes="(min-width:1024px) 50vw, 90vw" />
+                </div>
+                <div className="absolute -bottom-4 right-0 w-[30%] max-w-[190px] lg:bottom-auto lg:top-[36%] lg:right-0">
+                  <PhoneFrame src={p.images.mobile} alt={`${p.name} mobile homepage`} sizes="190px" />
+                </div>
               </div>
-              <div className="absolute -bottom-4 right-0 w-[30%] max-w-[190px] lg:bottom-auto lg:top-[36%] lg:right-0">
-                <PhoneFrame src={p.images.mobile} alt={`${p.name} mobile homepage`} sizes="190px" />
+            ) : p.seo ? (
+              <div className="flex h-full items-center">
+                <SeoVisual searches={p.seo} className="w-full max-w-[560px]" />
               </div>
-            </div>
+            ) : null}
           </div>
           {!reduce ? (
             <motion.div

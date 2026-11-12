@@ -38,8 +38,8 @@ export default function PreviewPage() {
               ))}
             </ul>
             <div className="mt-12 hidden items-end gap-4 lg:flex" aria-hidden="true">
-              {projects.slice(0, 3).map((p, i) => (
-                <PhoneFrame key={p.slug} src={p.images.mobile} alt="" className={`w-[30%] ${i === 1 ? "-translate-y-6" : ""}`} sizes="150px" />
+              {projects.filter((p) => p.images).slice(0, 3).map((p, i) => (
+                <PhoneFrame key={p.slug} src={p.images!.mobile} alt="" className={`w-[30%] ${i === 1 ? "-translate-y-6" : ""}`} sizes="150px" />
               ))}
             </div>
           </div>

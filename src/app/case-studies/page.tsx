@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/content/projects";
 import { PageHero, Reveal } from "@/components/ui";
+import { SeoVisual } from "@/components/SeoVisual";
 import { FinalCta } from "@/components/sections";
 
 export const metadata: Metadata = {
@@ -29,7 +30,13 @@ export default function CaseStudiesPage() {
                 </div>
                 <p className="text-stone md:col-span-3">{p.headline}</p>
                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-ink/10 md:col-span-3">
-                  <Image src={p.images.desktop} alt="" fill sizes="(min-width:768px) 22vw, 90vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                  {p.images ? (
+                    <Image src={p.images.desktop} alt="" fill sizes="(min-width:768px) 22vw, 90vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                  ) : p.seo ? (
+                    <div className="absolute inset-0 grid place-items-center bg-paper-2 p-3">
+                      <SeoVisual searches={p.seo} compact className="w-full" />
+                    </div>
+                  ) : null}
                   <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-paper opacity-0 transition-opacity group-hover:opacity-100">
                     <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                   </span>

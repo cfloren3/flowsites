@@ -11,6 +11,8 @@ export type CaseSection = {
   image?: { src: string; alt: string; caption: string; kind?: "desktop" | "mobile" };
 };
 
+export type SeoSearch = { query: string; rank: number; title: string; url: string };
+
 export type Project = {
   slug: string;
   name: string;
@@ -27,7 +29,9 @@ export type Project = {
   summary: string;
   features: string[];
   accent: string;
-  images: {
+  /** SEO case studies show a ranking visual instead of site screenshots. */
+  seo?: SeoSearch[];
+  images?: {
     desktop: string;
     mobile: string;
     mobile2?: string;
@@ -212,15 +216,10 @@ export const projects: Project[] = [
       "A central Chapter Resources hub that gives search engines and members one clear destination",
     ],
     accent: "#1c1f2b",
-    images: {
-      desktop: "/work/ontario-deca/desktop.webp",
-      mobile: "/work/ontario-deca/mobile.webp",
-      mobile2: "/work/ontario-deca/m2.webp",
-      sections: [
-        { src: "/work/ontario-deca/s2.webp", alt: "Ontario DECA resources section", caption: "Task-based pathways: resources, chapter visits, officers." },
-        { src: "/work/ontario-deca/s3.webp", alt: "Ontario DECA resources cards", caption: "DECA Resources: one clear destination for chapter material." },
-      ],
-    },
+    seo: [
+      { query: "high school case competitions canada", rank: 1, title: "Ontario DECA – Engage. Educate. Empower.", url: "deca.ca" },
+      { query: "deca", rank: 2, title: "Ontario DECA", url: "deca.ca" },
+    ],
     capturedOn: CAPTURED,
     metrics: [
       {
@@ -262,7 +261,6 @@ export const projects: Project[] = [
           "A central Resource Hub so chapter material lives in one crawlable place instead of scattered files",
           "Clear internal pathways from the homepage to events, resources and registration",
         ],
-        image: { src: "/work/ontario-deca/desktop.webp", alt: "Ontario DECA homepage", caption: "deca.ca homepage as captured 11 Nov 2026.", kind: "desktop" },
       },
       {
         id: "outcomes",

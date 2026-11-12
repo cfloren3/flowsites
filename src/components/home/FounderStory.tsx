@@ -40,8 +40,8 @@ export function FounderStory() {
           </div>
           <Reveal className="relative lg:col-span-5" variant="scale" delay={100}>
             <div className="relative mx-auto flex max-w-md items-end justify-center gap-4 pt-6">
-              <PhoneFrame src={y.images.mobile} alt="Yardex Guelph homepage on mobile" className="w-[46%] -rotate-3" />
-              <PhoneFrame src={y.images.mobile2!} alt="Yardex Guelph trust section on mobile" className="w-[46%] translate-y-10 rotate-2" />
+              <PhoneFrame src={y.images!.mobile} alt="Yardex Guelph homepage on mobile" className="w-[46%] -rotate-3" />
+              <PhoneFrame src={y.images!.mobile2!} alt="Yardex Guelph trust section on mobile" className="w-[46%] translate-y-10 rotate-2" />
             </div>
             <p className="label mt-16 text-center text-paper/55">yardexguelph.ca on mobile · captured {y.capturedOn}</p>
           </Reveal>

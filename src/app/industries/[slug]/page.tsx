@@ -124,7 +124,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
                 </span>
               </div>
               <div className="transition-transform duration-700 group-hover:-translate-y-1 lg:col-span-7">
-                <BrowserFrame src={example.images.desktop} alt={`${example.name} homepage`} url={example.displayUrl} />
+                <BrowserFrame src={example.images!.desktop} alt={`${example.name} homepage`} url={example.displayUrl} />
               </div>
             </Link>
           ) : (
