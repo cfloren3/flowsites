@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { RevealObserver, SmoothScroll } from "@/components/Motion";
 import { JsonLd } from "@/components/JsonLd";
 import { ContactDock } from "@/components/ContactDock";
+import { PreviewPopup } from "@/components/PreviewPopup";
 import { site } from "@/content/site";
 import { services } from "@/content/services";
 
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main">{children}</main>
         <Footer />
         <ContactDock />
+        <PreviewPopup />
         <RevealObserver />
         <SmoothScroll />
       </body>
