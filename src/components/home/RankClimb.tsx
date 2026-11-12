@@ -93,7 +93,7 @@ export function RankClimb() {
         <div className="container-x grid items-center gap-5 lg:grid-cols-12 lg:gap-12">
           {/* Narrative + impact */}
           <div className="lg:col-span-5">
-            <Eyebrow dark>How we get you found</Eyebrow>
+            <Eyebrow dark>The answer</Eyebrow>
             <h2 id="climb-title" className="mt-3 text-[clamp(1.7rem,4vw,3.6rem)] font-semibold leading-[0.95] tracking-[-0.05em] md:mt-5">
               From page 3 to the <span className="serif text-volt">top of Google.</span>
             </h2>

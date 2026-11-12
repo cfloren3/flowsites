@@ -5,6 +5,7 @@ import { Problem } from "@/components/home/Problem";
 import { TransformStory } from "@/components/home/TransformStory";
 import { SampleStudio } from "@/components/home/SampleStudio";
 import { FounderStory } from "@/components/home/FounderStory";
+import { SearchIntro } from "@/components/home/SearchIntro";
 import { RankClimb } from "@/components/home/RankClimb";
 import { Process } from "@/components/home/Process";
 import { FinalExperience } from "@/components/home/FinalExperience";
@@ -29,6 +30,7 @@ export default function Home() {
       <TransformStory />
       <SampleStudio />
       <FounderStory compact />
+      <SearchIntro />
       <RankClimb />
       <Process />
       <Pricing />
