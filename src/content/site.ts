@@ -31,10 +31,9 @@ export const formatCAD = (n: number) =>
 export const nav = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
-  { label: "Industries", href: "/industries" },
+  { label: "How it works", href: "/how-it-works" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
-  { label: "Resources", href: "/resources" },
 ] as const;
 
 export const previewTerms = [

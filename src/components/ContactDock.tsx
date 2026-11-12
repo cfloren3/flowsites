@@ -14,6 +14,7 @@ export function ContactDock() {
   const pathname = usePathname();
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [serverError, setServerError] = useState("");
@@ -22,6 +23,13 @@ export function ContactDock() {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => setOpen(false), [pathname]);
+  // Stay out of the way of the hero's own call to action: appear once the visitor scrolls.
+  useEffect(() => {
+    const on = () => setVisible(window.scrollY > window.innerHeight * 0.6);
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, [pathname]);
   useEffect(() => {
     if (!open) return;
     started.current = Date.now();
@@ -80,7 +88,12 @@ export function ContactDock() {
     ) : null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-[60] flex flex-col items-end gap-3 md:bottom-6 md:right-6">
+    <div
+      className={clsx(
+        "fixed bottom-4 right-4 z-[60] flex flex-col items-end gap-3 transition-[opacity,transform] duration-500 md:bottom-6 md:right-6",
+        visible || open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0",
+      )}
+    >
       <AnimatePresence>
         {open ? (
           <motion.div
@@ -172,8 +185,9 @@ export function ContactDock() {
         aria-expanded={open}
         aria-controls="contact-dock"
         aria-label={open ? "Close contact panel" : "Contact us"}
+        tabIndex={visible || open ? 0 : -1}
         className={clsx(
-          "group relative inline-flex h-14 items-center gap-2 rounded-full pl-4 pr-5 font-medium shadow-[0_18px_40px_-12px_rgba(11,27,51,.55)] transition-all duration-300",
+          "group relative inline-flex h-14 items-center gap-2 rounded-full px-3 font-medium sm:pl-4 sm:pr-5 shadow-[0_18px_40px_-12px_rgba(11,27,51,.55)] transition-all duration-300",
           open ? "bg-ink text-paper" : "bg-volt text-ink hover:-translate-y-0.5",
         )}
       >
@@ -181,7 +195,7 @@ export function ContactDock() {
         <span className="relative grid h-8 w-8 place-items-center rounded-full bg-ink text-paper group-[.bg-ink]:bg-paper/10">
           {open ? <X className="h-4 w-4" aria-hidden="true" /> : <MessageCircle className="h-4 w-4" aria-hidden="true" />}
         </span>
-        <span className="relative text-sm">{open ? "Close" : "Contact us"}</span>
+        <span className={clsx("relative text-sm", !open && "max-sm:sr-only")}>{open ? "Close" : "Contact us"}</span>
       </button>
     </div>
   );

@@ -11,6 +11,7 @@ type WithImages = Project & { images: NonNullable<Project["images"]> };
 const projects = allProjects.filter((p): p is WithImages => Boolean(p.images));
 import { Button, SplitText } from "../ui";
 import { Typewriter } from "../Type";
+import { Magnetic } from "../Magnetic";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -45,7 +46,7 @@ export function Hero() {
   // Scroll: tilted stage flattens into place
   const { scrollYProgress } = useScroll({ target: stageRef, offset: ["start end", "start 0.25"] });
   const rotX = useTransform(scrollYProgress, [0, 1], [reduce ? 0 : 16, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [reduce ? 1 : 0.9, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [reduce ? 1 : 0.84, 1.02]);
 
   const onMove = (e: React.PointerEvent) => {
     if (reduce || e.pointerType !== "mouse") return;
@@ -86,9 +87,9 @@ export function Hero() {
           as="h1"
           id="hero-title"
           immediate
-          text={"Built to stand out.\nEngineered to get *found.*"}
+          text={"Your work is exceptional.\nYour website should be *too.*"}
           accentClassName="text-volt"
-          className="display mt-6 text-[clamp(3.1rem,8.6vw,8.8rem)]"
+          className="display mt-6 text-[clamp(2.7rem,7.4vw,7.6rem)]"
           delay={120}
         />
         <div className="rise-in mt-6" style={{ "--d": "700ms" } as React.CSSProperties}>
@@ -101,21 +102,23 @@ export function Hero() {
 
         <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-12 md:items-end">
           <p className="rise-in lede max-w-xl text-paper/70 md:col-span-6" style={{ "--d": "450ms" } as React.CSSProperties}>
-            Beautifully designed websites, local SEO and ongoing growth for Ontario trades, restaurants and local businesses.{" "}
-            <span className="text-paper">Websites starting at $995&nbsp;CAD.</span>
+            We build websites that help Ontario trades and local businesses look better, get found on Google and win more work. Built by people who run a service business themselves.{" "}
+            <span className="whitespace-nowrap font-medium text-paper">Websites from $995&nbsp;CAD.</span>
           </p>
           <div className="rise-in md:col-span-6 md:justify-self-end" style={{ "--d": "600ms" } as React.CSSProperties}>
             <div className="flex flex-wrap gap-3">
-              <Button href="/free-website-preview" variant="accent" size="lg">
-                Get my free website preview
-              </Button>
+              <Magnetic>
+                <Button href="/free-website-preview" variant="accent" size="lg">
+                  Get my free website preview
+                </Button>
+              </Magnetic>
               <Button href="/work" variant="outline-light" size="lg">
                 Explore our work
               </Button>
             </div>
             <Link href="/pricing#guarantee" className="mt-4 inline-flex items-center gap-2 text-sm text-paper/60 hover:text-paper">
               <ShieldCheck className="h-4 w-4 text-volt" aria-hidden="true" />
-              Love the design or don&apos;t pay. <span className="underline underline-offset-4">See the terms</span>
+              Love the design before you pay. <span className="underline underline-offset-4">See the terms</span>
             </Link>
           </div>
         </div>

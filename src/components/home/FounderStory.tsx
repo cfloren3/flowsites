@@ -10,10 +10,10 @@ const lessons = [
   ["Systems give you time back.", "What happens after the form matters as much as the form."],
 ];
 
-export function FounderStory() {
+export function FounderStory({ compact = false }: { compact?: boolean }) {
   const y = getProject("yardex-guelph")!;
   return (
-    <section className="on-dark relative overflow-hidden bg-ink py-24 text-paper md:py-36" aria-labelledby="founder-title">
+    <section id="experience" data-section="credibility" className="on-dark relative overflow-hidden bg-ink py-24 text-paper md:py-36" aria-labelledby="founder-title">
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -22,7 +22,7 @@ export function FounderStory() {
             </Reveal>
             <SplitText
               id="founder-title"
-              text={"We didn't just build websites for trades.\nWe built a *trades* *business.*"}
+              text={"We don't just understand trades businesses.\n*We've* *built* *one.*"}
               accentClassName="text-volt"
               className="h-section mt-6"
             />
@@ -66,6 +66,7 @@ export function FounderStory() {
           ))}
         </dl>
 
+        {compact ? null : (
         <div className="mt-20 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {lessons.map(([t, b], i) => (
             <Reveal key={t} delay={i * 80} className="border-t border-paper/15 pt-6">
@@ -75,6 +76,7 @@ export function FounderStory() {
             </Reveal>
           ))}
         </div>
+        )}
       </div>
     </section>
   );

@@ -34,7 +34,7 @@ const competitors = [
   { n: "Clearview Lawn Co.", u: "clearviewlawn.ca", r: "4.2" },
 ];
 const SLOTS = 8;
-const VH_PER_STAGE = 55;
+const VH_PER_STAGE = 45;
 
 function useCount(target: number, reduce: boolean | null, decimals = 0) {
   const mv = useMotionValue(target);

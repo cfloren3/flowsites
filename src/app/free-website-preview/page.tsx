@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ShieldCheck } from "lucide-react";
 import { projects } from "@/content/projects";
 import { previewTerms } from "@/content/site";
-import { InquiryForm } from "@/components/InquiryForm";
+import { PreviewWizard } from "@/components/PreviewWizard";
 import { PhoneFrame } from "@/components/Frames";
 import { Eyebrow, Reveal, SplitText } from "@/components/ui";
 import { Faq } from "@/components/sections";
@@ -46,8 +46,8 @@ export default function PreviewPage() {
           <div className="lg:col-span-7">
             <Reveal className="rounded-[28px] border border-paper/10 bg-ink-2 p-6 sm:p-8 md:p-10">
               <p className="text-2xl font-semibold tracking-[-0.03em]">Request your free preview</p>
-              <p className="mt-2 mb-8 text-sm text-paper/55">Takes about two minutes.</p>
-              <InquiryForm dark interest="preview" />
+              <p className="mt-2 mb-8 text-sm text-paper/60">Four quick questions.</p>
+              <PreviewWizard dark placement="preview-page" />
             </Reveal>
           </div>
         </div>

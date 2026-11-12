@@ -139,7 +139,7 @@ export function Pricing({ detailed = false, showHeader = true }: { detailed?: bo
             <Reveal>
               <Eyebrow>Pricing · CAD</Eyebrow>
             </Reveal>
-            <SplitText id="pricing-title" text={"Premium websites.\n*Practical* *pricing.*"} className="h-section mt-6" />
+            <SplitText id="pricing-title" text={"A better website doesn't have to *break* *the* *bank.*"} accentClassName="text-volt-ink" className="h-section mt-6" />
           </div>
           <Reveal delay={150} className="lg:col-span-5">
             <p className="text-stone leading-relaxed">

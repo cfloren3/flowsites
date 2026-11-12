@@ -59,6 +59,10 @@ Spam protection: honeypot field, minimum fill time, per-IP rate limit (in-memory
 - Dynamic Open Graph image (`src/app/opengraph-image.tsx`)
 - Set `NEXT_PUBLIC_SITE_URL` to the production domain before deploying
 
+## Analytics & testing
+
+Set `NEXT_PUBLIC_GA_ID` to load GA4. CTA clicks, guided-form steps and completed preview requests are tracked automatically; see [`docs/CRO-PLAN.md`](docs/CRO-PLAN.md) for the event list, funnel and A/B test plan.
+
 ## Colour palettes
 
 Colours are CSS variables in `src/app/globals.css`:

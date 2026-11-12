@@ -8,6 +8,7 @@ import clsx from "clsx";
 import { Logo } from "./Logo";
 import { nav, site } from "@/content/site";
 import { PaletteSwitcher } from "./PaletteSwitcher";
+import { Magnetic } from "./Magnetic";
 
 export function Nav() {
   const pathname = usePathname();
@@ -80,20 +81,16 @@ export function Nav() {
               ))}
             </ul>
             <div className="flex items-center gap-2">
-              <PaletteSwitcher className="hidden xl:flex" />
-              <Link
-                href="/contact"
-                className="hidden md:inline-flex rounded-full px-4 py-2.5 text-[0.92rem] text-ink/75 hover:text-ink"
-              >
-                Contact
-              </Link>
-              <Link
-                href="/free-website-preview"
-                className="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[0.92rem] font-medium text-paper hover:bg-ink-3 transition-colors"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-volt pulse-dot" aria-hidden="true" />
-                Free preview
-              </Link>
+              <Magnetic strength={0.2}>
+                <Link
+                  href="/free-website-preview"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[0.92rem] font-medium text-paper transition-colors hover:bg-ink-3"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-volt pulse-dot" aria-hidden="true" />
+                  <span className="hidden sm:inline">Get my free preview</span>
+                  <span className="sm:hidden">Free preview</span>
+                </Link>
+              </Magnetic>
               <button
                 type="button"
                 onClick={() => setOpen((o) => !o)}

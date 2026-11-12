@@ -64,7 +64,7 @@ export function TransformStory() {
       <div className="container-x">
         <Header />
       </div>
-      <div ref={ref} className="relative" style={{ height: "260vh" }}>
+      <div ref={ref} className="relative" style={{ height: "220vh" }}>
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden pt-24 pb-10 md:pt-28">
         <div className="container-x">
           <div className="grid items-center gap-8 lg:grid-cols-12">

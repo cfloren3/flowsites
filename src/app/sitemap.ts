@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     u("/industries", 0.7),
     ...industries.map((i) => u(`/industries/${i.slug}`, 0.7)),
     u("/pricing", 0.8),
+    u("/how-it-works", 0.7),
     u("/about", 0.6),
     u("/contact", 0.6),
     u("/resources", 0.5, "weekly"),

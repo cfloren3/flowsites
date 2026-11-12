@@ -41,7 +41,7 @@ export function Footer() {
         </div>
         <div aria-hidden="true" className="mt-20 select-none overflow-hidden">
           <svg viewBox="0 0 1000 190" className="w-full" focusable="false">
-            <text x="0" y="160" fill="color-mix(in_oklab,var(--p-paper)_6%,transparent)" fontFamily="var(--font-geist-sans)" fontWeight="600" fontSize="226" letterSpacing="-15">
+            <text x="0" y="160" style={{ fill: "color-mix(in oklab, var(--p-paper) 7%, transparent)" }} fontFamily="var(--font-geist-sans)" fontWeight="600" fontSize="226" letterSpacing="-15">
               flowsites
             </text>
           </svg>

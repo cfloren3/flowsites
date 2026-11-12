@@ -1,122 +1,79 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useRef, useState } from "react";
+import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring } from "motion/react";
+import clsx from "clsx";
 import { Eyebrow } from "../ui";
 
 export const processSteps = [
-  { n: "01", t: "We learn your business", b: "Your services, ideal customers, service area, competitors, current website and goals. A short call or form, no homework.", tags: ["Services", "Service area", "Competitors", "Goals"] },
-  { n: "02", t: "We design your website", b: "A custom design that reflects your business and makes the value obvious, planned for speed, search and conversion from the start.", tags: ["Custom design", "SEO structure", "Conversion paths"] },
-  { n: "03", t: "You see it before you pay", b: "We send a private, interactive preview. Click through it on your phone. If you don't like the design, you don't pay.", tags: ["Private link", "No deposit", "No obligation"] },
-  { n: "04", t: "We launch & optimise", b: "Once approved and quoted, we build the full site, connect your domain, forms, analytics and Search Console, and launch.", tags: ["Domain", "Forms", "Analytics", "Search Console"] },
-  { n: "05", t: "We monitor & improve", b: "With an optional growth plan, we track visibility and enquiries, report clearly and keep improving what's working.", tags: ["Rankings", "Reporting", "Improvements"] },
+  { n: "01", t: "Discover", b: "A short call or form about your services, service area and goals. No homework." },
+  { n: "02", t: "Design", b: "We design your homepage around your business, planned for Google from the start." },
+  { n: "03", t: "Preview", b: "You get a private link to click through on your phone. Don't love it? You don't pay.", featured: true },
+  { n: "04", t: "Launch", b: "Once you approve and we agree the scope in writing, we build it out and put it live on your domain." },
+  { n: "05", t: "Grow", b: "With an optional growth plan, we track visibility and enquiries and keep improving." },
 ];
 
+/** Five connected stages. The connecting line draws itself as the section scrolls through view. */
 export function Process() {
+  const ref = useRef<HTMLOListElement>(null);
   const reduce = useReducedMotion();
-  const [wide, setWide] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
-    const on = () => setWide(mq.matches);
-    on();
-    mq.addEventListener("change", on);
-    return () => mq.removeEventListener("change", on);
-  }, []);
-  if (!wide || reduce) return <ProcessVertical />;
-  return <ProcessHorizontal />;
-}
+  const [active, setActive] = useState(reduce ? processSteps.length - 1 : -1);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.8", "end 0.55"] });
+  const p = useSpring(scrollYProgress, { stiffness: 90, damping: 22 });
+  useMotionValueEvent(p, "change", (v) => {
+    if (!reduce) setActive(Math.floor(v * processSteps.length * 1.02) - (v < 0.04 ? 1 : 0));
+  });
 
-function Intro() {
   return (
-    <div className="max-w-xl">
-      <Eyebrow>How it works</Eyebrow>
-      <h2 id="process-title" className="h-section mt-6">
-        Five steps.
-        <br />
-        <span className="text-stone">Zero guesswork.</span>
-      </h2>
-      <p className="mt-6 max-w-md text-stone leading-relaxed">Clear at every stage, with no commitment until you&apos;ve seen and approved your design.</p>
-    </div>
-  );
-}
-
-function StepCard({ s, i }: { s: (typeof processSteps)[number]; i: number }) {
-  const featured = i === 2;
-  return (
-    <article
-      className={`flex h-full flex-col rounded-[24px] border p-7 md:p-9 ${featured ? "on-dark border-transparent bg-ink text-paper" : "border-ink/10 bg-paper"}`}
-    >
-      <div className="flex items-center justify-between">
-        <span
-          aria-hidden="true"
-          data-num={s.n}
-          className={`text-[4.5rem] font-semibold leading-none tracking-[-0.06em] before:content-[attr(data-num)] ${featured ? "text-volt" : "text-ink/15"}`}
-        />
-        <span className="sr-only">Step {s.n}</span>
-        {featured ? <span className="label rounded-full bg-volt px-2.5 py-1 !text-[0.64rem] text-ink">The guarantee</span> : null}
-      </div>
-      <h3 className="h-card mt-auto pt-12 text-[1.9rem]">{s.t}</h3>
-      <p className={`mt-4 leading-relaxed ${featured ? "text-paper/70" : "text-stone"}`}>{s.b}</p>
-      <ul className="mt-6 flex flex-wrap gap-2">
-        {s.tags.map((t) => (
-          <li key={t} className={`rounded-full border px-3 py-1 text-xs ${featured ? "border-paper/15 text-paper/70" : "border-ink/10 text-ink/60"}`}>
-            {t}
-          </li>
-        ))}
-      </ul>
-    </article>
-  );
-}
-
-function ProcessHorizontal() {
-  const ref = useRef<HTMLElement>(null);
-  const trackRef = useRef<HTMLOListElement>(null);
-  const [dist, setDist] = useState(0);
-  useEffect(() => {
-    const calc = () => {
-      if (trackRef.current) setDist(Math.max(0, trackRef.current.scrollWidth - window.innerWidth + 64));
-    };
-    calc();
-    window.addEventListener("resize", calc);
-    return () => window.removeEventListener("resize", calc);
-  }, []);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const x = useTransform(scrollYProgress, [0.05, 0.95], [0, -dist]);
-  const bar = useTransform(scrollYProgress, [0.05, 0.95], ["0%", "100%"]);
-  return (
-    <section ref={ref} className="relative bg-paper-2" style={{ height: `calc(100vh + ${dist}px)` }} aria-labelledby="process-title">
-      <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-        <div className="container-x">
-          <Intro />
-        </div>
-        <motion.ol ref={trackRef} style={{ x }} className="mt-14 flex w-max gap-5 pl-[var(--gutter)] pr-[var(--gutter)]">
-          {processSteps.map((s, i) => (
-            <li key={s.n} className="h-[400px] w-[min(400px,32vw)] shrink-0">
-              <StepCard s={s} i={i} />
-            </li>
-          ))}
-        </motion.ol>
-        <div className="container-x mt-10">
-          <div className="h-[2px] w-full overflow-hidden rounded-full bg-ink/10" aria-hidden="true">
-            <motion.div className="h-full bg-ink" style={{ width: bar }} />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ProcessVertical() {
-  return (
-    <section className="bg-paper-2 py-24" aria-labelledby="process-title">
+    <section id="process" data-section="process" className="bg-paper py-24 md:py-32" aria-labelledby="process-title">
       <div className="container-x">
-        <Intro />
-        <ol className="mt-12 grid gap-4 md:grid-cols-2">
-          {processSteps.map((s, i) => (
-            <li key={s.n} data-reveal="" style={{ ["--d" as string]: `${i * 60}ms` }} className={i === 2 ? "md:col-span-2" : ""}>
-              <StepCard s={s} i={i} />
-            </li>
-          ))}
+        <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <Eyebrow>How it works</Eyebrow>
+            <h2 id="process-title" className="h-section mt-6">
+              Five steps. <span className="serif text-volt-ink">Zero guesswork.</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-stone leading-relaxed lg:col-span-4 lg:justify-self-end lg:pb-3">
+            You run the business. We handle the website. Most of your time is one short conversation and one look at the preview.
+          </p>
+        </div>
+
+        <ol ref={ref} className="relative mt-14 grid gap-8 lg:mt-20 lg:grid-cols-5 lg:gap-6">
+          {/* track + animated fill: vertical on mobile, horizontal on desktop */}
+          <span aria-hidden="true" className="absolute left-[19px] top-2 bottom-2 w-px bg-ink/10 lg:left-0 lg:right-0 lg:top-[19px] lg:bottom-auto lg:h-px lg:w-auto" />
+          <motion.span
+            aria-hidden="true"
+            className="absolute left-[18px] top-2 bottom-2 w-[3px] origin-top rounded-full bg-volt lg:hidden"
+            style={{ scaleY: reduce ? 1 : p }}
+          />
+          <motion.span
+            aria-hidden="true"
+            className="absolute left-0 right-0 top-[18px] hidden h-[3px] origin-left rounded-full bg-volt lg:block"
+            style={{ scaleX: reduce ? 1 : p }}
+          />
+          {processSteps.map((s, i) => {
+            const on = i <= active;
+            return (
+              <li key={s.n} className="relative pl-14 lg:pl-0 lg:pt-16">
+                <span
+                  className={clsx(
+                    "absolute left-0 top-0 grid h-10 w-10 place-items-center rounded-full border text-xs font-semibold transition-all duration-500",
+                    on ? "scale-100 border-volt bg-volt text-ink" : "scale-90 border-ink/15 bg-paper text-ink/60",
+                  )}
+                >
+                  {s.n}
+                </span>
+                <div className={clsx("transition-transform duration-500 ease-[var(--ease-flow)]", on ? "translate-y-0" : "translate-y-1.5")}>
+                  <h3 className="flex flex-wrap items-center gap-2 text-2xl font-semibold tracking-[-0.03em]">
+                    {s.t}
+                    {s.featured ? <span className="label rounded-full bg-ink px-2 py-1 !text-[0.6rem] text-paper">No-risk step</span> : null}
+                  </h3>
+                  <p className="mt-2 text-stone leading-relaxed">{s.b}</p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </div>
     </section>
