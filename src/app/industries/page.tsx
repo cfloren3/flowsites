@@ -3,9 +3,9 @@ import { PageHero } from "@/components/ui";
 import { FinalCta, IndustriesGrid } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "Web Design by Industry: Contractors & Trades in Ontario",
+  title: "Web Design by Industry: Trades, Restaurants & Local Businesses",
   description:
-    "Website design and local SEO tailored to Ontario landscaping, contracting, roofing, plumbing, electrical, HVAC and cleaning businesses.",
+    "Website design and local SEO tailored to Ontario trades, restaurants, cafés, retail shops, salons, clinics and professional services.",
   alternates: { canonical: "/industries" },
 };
 
@@ -14,8 +14,8 @@ export default function IndustriesPage() {
     <>
       <PageHero
         eyebrow="Industries"
-        title={"Every trade sells\n*differently.*"}
-        lede="A roofer's emergency call, a landscaper's spring rush and an HVAC company's maintenance plans need different websites. Here's how we design for each."
+        title={"Every business sells\n*differently.*"}
+        lede="A roofer's emergency call, a restaurant's Friday-night rush and a salon's booking calendar need different websites. Here's how we design for each."
         className="!pb-0"
       />
       <IndustriesGrid />

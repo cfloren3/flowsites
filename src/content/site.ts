@@ -12,7 +12,7 @@ export const site = {
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "", // left empty until a business line exists
   tagline: "Built to stand out. Engineered to get found.",
   description:
-    "Flowsites designs premium, fast, search-ready websites for Ontario contractors and service businesses. Custom websites starting at $750 CAD, local SEO, and ongoing growth. See your design before you pay.",
+    "Flowsites designs premium, fast, search-ready websites for Ontario trades, restaurants and local businesses. Custom websites starting at $750 CAD, local SEO, and ongoing growth. See your design before you pay.",
   startingPrice: 750,
   currency: "CAD",
   // Service-area business: no storefront or office is claimed.

@@ -190,6 +190,98 @@ export const industries: Industry[] = [
     trust: ["Bonded and insured", "Satisfaction guarantee terms", "Background-checked staff (only if true)", "Reviews with photos"],
     exampleNote: "No cleaning case study published yet. A free preview is the best way to see what we'd build.",
   },
+  {
+    slug: "restaurant-web-design",
+    name: "Restaurants & Cafés",
+    trade: "restaurant",
+    title: "Websites for restaurants, cafés & bakeries",
+    metaTitle: "Restaurant & Café Website Design in Ontario",
+    metaDescription:
+      "Restaurant and café websites for Ontario: fast mobile menus, hours, reservations and online ordering links, plus local SEO for “near me” searches. Starting at $750 CAD.",
+    hero: "Hungry people decide in seconds. Make yours the easy choice.",
+    intro:
+      "Restaurant searches are fast, mobile and local. People want the menu, the hours and a way to book or order, ideally without pinching to zoom on a PDF.",
+    challenges: [
+      { title: "“Near me” and “open now” searches", body: "Diners search on their phones minutes before they eat. Your Google profile and website need accurate hours, location and menu to win that moment." },
+      { title: "PDF menus and stale info", body: "Out-of-date menus, prices and holiday hours frustrate guests and cost covers. A menu you can update yourself fixes that." },
+      { title: "Third-party platform fees", body: "Delivery apps take a large cut. Your own site can steer regulars toward direct ordering or reservations." },
+    ],
+    design: ["Food photography that loads fast on mobile", "Readable, searchable HTML menus (no PDFs)", "Hours, location and parking info on the first screen", "Private events and catering pages"],
+    leadFeatures: ["Reservation booking or link to your booking tool", "Direct online ordering link", "Catering and event enquiry form", "Tap-to-call and directions buttons"],
+    searches: ["restaurants near me", "best brunch [city]", "[cuisine] restaurant [city]", "catering [city]", "cafe open now [city]"],
+    seoNotes: "Menu items written as real HTML text help you appear for dish-level searches (“best ramen Guelph”), and Restaurant schema can surface hours, price range and cuisine in Google.",
+    trust: ["Google rating and recent reviews", "Real dining-room and dish photos", "Press mentions or local awards", "Clear allergy and dietary information"],
+    exampleNote: "No restaurant case study published yet. Your free preview will be built around your menu and space.",
+  },
+  {
+    slug: "retail-web-design",
+    name: "Retail & Local Shops",
+    trade: "retail",
+    title: "Websites for independent retailers & local shops",
+    metaTitle: "Retail & Local Shop Website Design in Ontario",
+    metaDescription:
+      "Websites for Ontario independent shops and boutiques: product highlights, store hours, local SEO and optional online store links. Starting at $750 CAD.",
+    hero: "Bring the shop-window feeling online.",
+    intro:
+      "Independent shops win on character and service. Your website should show what makes the store worth the trip, and make it easy to visit, call or buy.",
+    challenges: [
+      { title: "Competing with big-box and online giants", body: "You can't out-discount Amazon, but you can out-personality it. Your site should show the curation, expertise and local feel." },
+      { title: "Is it in stock?", body: "Shoppers want to know before they drive over. Featured products and an easy “ask us” option reduce wasted trips." },
+      { title: "Foot traffic from search", body: "“[product] store near me” searches are high intent. Accurate location, hours and categories turn them into visits." },
+    ],
+    design: ["Featured collections and new arrivals", "Store story and staff picks", "Hours, directions and parking up front", "Seasonal and event promotions"],
+    leadFeatures: ["“Check availability” enquiry form", "Optional online store or click-and-collect link", "Newsletter sign-up", "Gift card and special-order requests"],
+    searches: ["[product] store near me", "boutique [city]", "gift shop [city]", "[brand] retailer Ontario"],
+    seoNotes: "Category pages for what you actually stock, plus an accurate Google Business Profile with photos and products, help you appear for local product searches.",
+    trust: ["Google reviews", "Years serving the community", "Brands you carry (with permission)", "Return and service policies"],
+    exampleNote: "No retail case study published yet. A free preview is the best way to see what we'd build for your shop.",
+  },
+  {
+    slug: "salon-wellness-web-design",
+    name: "Salons, Health & Wellness",
+    trade: "wellness",
+    title: "Websites for salons, spas, clinics & fitness studios",
+    metaTitle: "Salon, Spa & Wellness Website Design in Ontario",
+    metaDescription:
+      "Websites for Ontario salons, spas, clinics and fitness studios: online booking, service menus, practitioner profiles and local SEO. Starting at $750 CAD.",
+    hero: "Fill your calendar, not your inbox.",
+    intro:
+      "Appointment businesses live and die by bookings. Your site should answer “what do you offer, what does it cost, and when can I come in?” without a phone call.",
+    challenges: [
+      { title: "Booking friction", body: "If clients have to call during business hours to book, many won't. Clear online booking captures evening and weekend demand." },
+      { title: "Trust in personal services", body: "People are choosing who touches their hair, skin or body. Practitioner profiles, credentials and real results matter." },
+      { title: "Service menu clarity", body: "Long, confusing price lists slow decisions. Grouped services with durations and starting prices convert better." },
+    ],
+    design: ["Clean service menus with durations and prices", "Practitioner and team profiles", "Before/after galleries (with client consent)", "Calm, on-brand visual identity"],
+    leadFeatures: ["Online booking or link to your booking system", "New-client offer or consultation request", "Gift certificates", "Membership and package sign-ups"],
+    searches: ["hair salon [city]", "massage therapy near me", "spa [city]", "physiotherapy [city]", "yoga studio [city]"],
+    seoNotes: "A page per core service (e.g. balayage, registered massage therapy) captures specific searches; reviews mentioning those services strengthen local rankings.",
+    trust: ["Credentials and registrations (only those held)", "Google reviews", "Hygiene and safety practices", "Clear cancellation policy"],
+    exampleNote: "No salon or wellness case study published yet. Your free preview will be built around your services and team.",
+  },
+  {
+    slug: "professional-services-web-design",
+    name: "Professional & Local Services",
+    trade: "professional services",
+    title: "Websites for accountants, consultants, studios & local service firms",
+    metaTitle: "Professional Services Website Design in Ontario",
+    metaDescription:
+      "Websites for Ontario accountants, bookkeepers, consultants, photographers, real estate teams and other local service firms. Credibility-first design and local SEO. Starting at $750 CAD.",
+    hero: "Look as established as the expertise you bring.",
+    intro:
+      "Clients choosing an accountant, consultant or photographer are buying trust. Your website should explain exactly what you do, who it's for and how to start.",
+    challenges: [
+      { title: "Explaining intangible services", body: "Clear packages, process steps and outcomes make a service easy to understand and easy to buy." },
+      { title: "Standing out from look-alike firms", body: "Generic stock photos and vague copy make firms interchangeable. Real people and specific expertise set you apart." },
+      { title: "Long consideration", body: "Prospects compare several firms. Useful guides and FAQs keep you in the running and build authority." },
+    ],
+    design: ["Service packages with clear scope", "Team bios with real photos", "Case examples (with permission)", "Process pages that remove uncertainty"],
+    leadFeatures: ["Consultation booking", "Qualified enquiry form", "Downloadable guides or checklists", "Testimonials near every call to action"],
+    searches: ["accountant [city]", "bookkeeper near me", "wedding photographer [city]", "small business consultant Ontario"],
+    seoNotes: "Helpful, specific articles (e.g. year-end tax checklist for Ontario contractors) attract the right clients and support service-page rankings.",
+    trust: ["Designations and memberships (only those held)", "Years in practice", "Client reviews", "Clear pricing or starting rates"],
+    exampleNote: "No professional-services case study published yet. Ask for a free preview to see your firm online.",
+  },
 ];
 
 export const getIndustry = (slug: string) => industries.find((i) => i.slug === slug);

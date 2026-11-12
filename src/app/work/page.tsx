@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { projects } from "@/content/projects";
 import { evidenceMeta, type EvidenceStatus } from "@/content/evidence";
 import { WorkGrid } from "@/components/WorkGrid";
-import { SiteMarquee } from "@/components/SiteMarquee";
 import { EvidenceBadge, Eyebrow, PageHero, Reveal } from "@/components/ui";
 import { FinalCta } from "@/components/sections";
 
@@ -21,8 +20,7 @@ export default function WorkPage() {
         title={"Proof, not *promises.*"}
         lede="Trades websites, personal brands, organisational sites and software. Every project is captured from the live site and labelled with exactly what we did."
       />
-      <SiteMarquee dark={false} title={false} />
-      <section className="container-x py-20 md:py-28" aria-label="Projects">
+      <section className="container-x pb-24 md:pb-32" aria-label="Projects">
         <WorkGrid projects={projects} />
       </section>
 

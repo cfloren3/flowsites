@@ -60,11 +60,14 @@ export function TransformStory() {
   }
 
   return (
-    <section ref={ref} className="relative bg-paper" style={{ height: "320vh" }} aria-labelledby="transform-title">
-      <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden py-20">
+    <section className="relative bg-paper pt-24 md:pt-36" aria-labelledby="transform-title">
+      <div className="container-x">
+        <Header />
+      </div>
+      <div ref={ref} className="relative" style={{ height: "260vh" }}>
+      <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden pt-24 pb-10 md:pt-28">
         <div className="container-x">
-          <Header />
-          <div className="mt-8 grid items-center gap-8 lg:mt-12 lg:grid-cols-12">
+          <div className="grid items-center gap-8 lg:grid-cols-12">
             <ol className="order-2 grid grid-cols-3 gap-3 lg:order-1 lg:col-span-4 lg:grid-cols-1 lg:gap-6">
               {steps.map((s, i) => (
                 <li key={s.k} aria-current={i === step ? "step" : undefined} className={clsx("border-t pt-3 transition-colors duration-500 lg:pt-5", i === step ? "border-ink text-ink" : "border-ink/15 text-ink/60")}>
@@ -105,17 +108,24 @@ export function TransformStory() {
           </div>
         </div>
       </div>
+      </div>
     </section>
   );
 }
 
 function Header() {
   return (
-    <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-      <h2 id="transform-title" className="h-section max-w-[15ch] !text-[clamp(2.1rem,4.6vw,4.4rem)]">
-        Same lawn company. <span className="serif text-volt-ink">Completely different</span> first impression.
+    <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+      <h2 id="transform-title" className="h-section lg:col-span-8">
+        Same lawn company.
+        <br />
+        <span className="serif text-volt-ink">Completely different</span>
+        <br />
+        first impression.
       </h2>
-      <p className="max-w-sm text-stone">Keep scrolling: Yardex Guelph&apos;s original website, rebuilt into the one that ranks today.</p>
+      <p className="max-w-sm text-stone leading-relaxed lg:col-span-4 lg:justify-self-end lg:pb-3">
+        Keep scrolling: Yardex Guelph&apos;s original website, rebuilt into the one that ranks today.
+      </p>
     </div>
   );
 }

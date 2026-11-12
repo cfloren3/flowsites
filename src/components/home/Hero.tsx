@@ -76,7 +76,7 @@ export function Hero() {
             Web design &amp; local SEO
           </span>
           <span aria-hidden="true">/</span>
-          <span>For Ontario&apos;s trades</span>
+          <span>For Ontario&apos;s trades &amp; local businesses</span>
         </p>
 
         <SplitText
@@ -91,14 +91,14 @@ export function Hero() {
         <div className="rise-in mt-6" style={{ "--d": "700ms" } as React.CSSProperties}>
           <Typewriter
             prefix="Websites for"
-            words={["landscapers", "roofers", "plumbers", "electricians", "HVAC companies", "contractors", "cleaning companies"]}
+            words={["landscapers", "restaurants", "roofers", "cafés", "plumbers", "salons", "contractors", "local shops", "HVAC companies"]}
             className="text-[clamp(0.95rem,1.6vw,1.2rem)] text-paper/80"
           />
         </div>
 
         <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-12 md:items-end">
           <p className="rise-in lede max-w-xl text-paper/70 md:col-span-6" style={{ "--d": "450ms" } as React.CSSProperties}>
-            Beautifully designed websites, local SEO and ongoing growth for Ontario contractors and service businesses.{" "}
+            Beautifully designed websites, local SEO and ongoing growth for Ontario trades, restaurants and local businesses.{" "}
             <span className="text-paper">Websites starting at $750&nbsp;CAD.</span>
           </p>
           <div className="rise-in md:col-span-6 md:justify-self-end" style={{ "--d": "600ms" } as React.CSSProperties}>

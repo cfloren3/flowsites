@@ -252,13 +252,13 @@ export function IndustriesGrid() {
             <Reveal>
               <Eyebrow>Industries</Eyebrow>
             </Reveal>
-            <SplitText id="ind-title" text={"Made for the *trades.*"} className="h-section mt-6" />
+            <SplitText id="ind-title" text={"Made for trades &\n*local* *businesses.*"} className="h-section mt-6" />
           </div>
           <Reveal delay={100}>
-            <p className="max-w-sm text-stone">Every trade has different customers, urgency and search behaviour. We design for yours.</p>
+            <p className="max-w-sm text-stone">A roofer, a café and a salon all win customers differently. We design for how your customers search and decide.</p>
           </Reveal>
         </div>
-        <ul className="mt-12 border-t border-ink/10">
+        <ul className="mt-12 grid border-t border-ink/10 md:grid-cols-2 md:gap-x-10">
           {industries.map((ind, i) => (
             <Reveal as="li" key={ind.slug} delay={i * 40}>
               <Link
@@ -267,10 +267,10 @@ export function IndustriesGrid() {
               >
                 <span aria-hidden="true" className="absolute inset-0 origin-bottom scale-y-0 bg-ink transition-transform duration-500 ease-[var(--ease-flow)] group-hover:scale-y-100" />
                 <span className="relative flex items-baseline gap-5 transition-[color,transform] duration-500 group-hover:translate-x-4 group-hover:text-paper">
-                  <span className="label text-stone group-hover:text-paper/50">0{i + 1}</span>
-                  <span className="text-[clamp(1.5rem,3.4vw,2.8rem)] font-semibold tracking-[-0.045em]">{ind.name}</span>
+                  <span className="label text-stone group-hover:text-paper/60">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[clamp(1.4rem,2.6vw,2.2rem)] font-semibold tracking-[-0.045em]">{ind.name}</span>
                 </span>
-                <span className="relative hidden max-w-xs text-sm text-stone transition-colors group-hover:text-paper/70 md:block">{ind.hero}</span>
+                <span className="sr-only">: {ind.hero}</span>
                 <ArrowUpRight className="relative h-6 w-6 shrink-0 transition-[color,transform] duration-500 group-hover:-translate-x-4 group-hover:text-volt" aria-hidden="true" />
               </Link>
             </Reveal>
@@ -352,7 +352,7 @@ export function FinalCta({ title = "Your next customer is searching.\n*Make* *su
 
 /* ---------------- Marquee ---------------- */
 export function TradesMarquee() {
-  const items = ["Landscaping", "Lawn care", "Roofing", "Plumbing", "Electrical", "HVAC", "Renovation", "Painting", "Cleaning", "Pressure washing", "Window cleaning", "Property maintenance", "Concrete & paving"];
+  const items = ["Landscaping", "Restaurants", "Lawn care", "Retail", "Roofing", "Salons", "Plumbing", "Electrical", "HVAC", "Renovation", "Painting", "Cleaning", "Pressure washing", "Window cleaning", "Property maintenance", "Concrete & paving"];
   return (
     <div className="on-dark overflow-hidden border-y border-paper/10 bg-ink py-5 text-paper" aria-label="Industries we work with">
       <ul className="flex w-max animate-marquee gap-10" aria-hidden="false">

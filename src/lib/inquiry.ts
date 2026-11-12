@@ -9,7 +9,11 @@ export const industryOptions = [
   "Cleaning / pressure washing / windows",
   "Property maintenance",
   "Concrete / paving",
-  "Other service business",
+  "Restaurant / café / bakery",
+  "Retail / local shop",
+  "Salon / spa / health & wellness",
+  "Professional services",
+  "Other local business",
 ] as const;
 
 export const interestOptions = {
@@ -51,6 +55,13 @@ export function validateInquiry(raw: Record<string, unknown>): { data?: InquiryI
     interest: (Object.keys(interestOptions).includes(s("interest")) ? s("interest") : "general") as InquiryInput["interest"],
   };
   const errors: FieldErrors = {};
+  // Quick messages (floating contact panel) only need name, email and a message.
+  const quick = raw.quick === true || raw.quick === "1";
+  if (quick) {
+    data.business ||= "Not provided (quick message)";
+    data.industry ||= "Not provided";
+    data.location ||= "Not provided";
+  }
   if (data.name.length < 2) errors.name = "Please enter your name.";
   if (data.business.length < 2) errors.business = "Please enter your business name.";
   if (!EMAIL.test(data.email)) errors.email = "Please enter a valid email address.";
@@ -58,6 +69,7 @@ export function validateInquiry(raw: Record<string, unknown>): { data?: InquiryI
   if (data.website && !/^(https?:\/\/)?[\w-]+(\.[\w-]+)+([/?#].*)?$/i.test(data.website)) errors.website = "Please enter a valid web address, or leave it blank.";
   if (!data.industry) errors.industry = "Please choose your industry.";
   if (data.location.length < 2) errors.location = "Where do you work? A town or region is fine.";
-  if (data.improve.length < 10) errors.improve = "Tell us a little about what you'd like to improve (at least 10 characters).";
+  if (data.improve.length < (quick ? 5 : 10))
+    errors.improve = quick ? "Please add a short message." : "Tell us a little about what you'd like to improve (at least 10 characters).";
   return Object.keys(errors).length ? { errors } : { data, errors };
 }

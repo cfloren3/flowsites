@@ -7,7 +7,6 @@ import { SeoSection } from "@/components/home/SeoSection";
 import { RankingSection } from "@/components/home/RankingDashboard";
 import { Process } from "@/components/home/Process";
 import { Guarantee, WhyFlowsites, Pricing, IndustriesGrid, Faq, faqSchema } from "@/components/sections";
-import { SiteMarquee } from "@/components/SiteMarquee";
 import { RankClimb } from "@/components/home/RankClimb";
 import { ContactBlock } from "@/components/ContactBlock";
 import { JsonLd } from "@/components/JsonLd";
@@ -21,7 +20,6 @@ export default function Home() {
     <>
       <JsonLd data={faqSchema()} />
       <Hero />
-      <SiteMarquee />
       <FeaturedWork />
       <FounderStory />
       <TransformStory />

@@ -8,14 +8,14 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { RevealObserver, SmoothScroll } from "@/components/Motion";
 import { JsonLd } from "@/components/JsonLd";
-import { MobileCta } from "@/components/MobileCta";
+import { ContactDock } from "@/components/ContactDock";
 import { site } from "@/content/site";
 import { services } from "@/content/services";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Flowsites | Website Design & Local SEO for Ontario Trades. Starting at $750",
+    default: "Flowsites | Web Design & Local SEO for Ontario Trades & Local Businesses",
     template: "%s | Flowsites",
   },
   description: site.description,
@@ -97,7 +97,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Nav />
         <main id="main">{children}</main>
         <Footer />
-        <MobileCta />
+        <ContactDock />
         <RevealObserver />
         <SmoothScroll />
       </body>

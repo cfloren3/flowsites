@@ -38,7 +38,7 @@ Edit `yardexRankings` in `src/content/rankings.ts`. Fill **all** fields (engine,
 Add an entry to `industries.ts`. It's automatically routed, linked, and added to the sitemap. Only add pages with genuinely distinct content and search intent. No doorway pages.
 
 ### Updating screenshots
-Screenshots in `public/work/<slug>/` (including `full.webp` full-page captures for the scrollable carousel, and `yardex-guelph/before.webp`, Yardex's original site) were captured from the live sites with Playwright on 2026-11-11 (desktop 1440×900, mobile 390×844), converted to WebP. Re-capture and update `capturedOn` in `projects.ts` when a site changes.
+Screenshots in `public/work/<slug>/` (including `yardex-guelph/before.webp`, Yardex's original site) were captured from the live sites with Playwright on 2026-11-11 (desktop 1440×900, mobile 390×844), converted to WebP. Re-capture and update `capturedOn` in `projects.ts` when a site changes.
 
 ## Lead form
 
